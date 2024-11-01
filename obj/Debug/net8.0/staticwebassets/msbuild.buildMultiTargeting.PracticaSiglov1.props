@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PracticaSiglov1.props" />
+</Project>

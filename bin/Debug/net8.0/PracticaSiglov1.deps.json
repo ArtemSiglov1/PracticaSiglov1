@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PracticaSiglov1/1.0.0": {
+        "runtime": {
+          "PracticaSiglov1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PracticaSiglov1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
