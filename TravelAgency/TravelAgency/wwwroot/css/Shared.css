@@ -1,0 +1,145 @@
+﻿/* Устанавливаем box-sizing для всех элементов, чтобы размеры учитывались с учетом отступов и границ */
+html {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; /* Устанавливаем шрифт для всего документа */
+}
+
+/* Сбрасываем отступы и поля, чтобы все элементы наследовали box-sizing от html */
+*,
+*::before,
+*::after {
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    box-sizing: inherit; /* Наследуем box-sizing от html */
+}
+
+/* Основные стили для body */
+body {
+    height: 10000px; /* Высота страницы для проверки прокрутки; может быть удалена позже */
+    width: 100%; /* Устанавливаем ширину на 100% */
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Выравниваем элементы по колонкам */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+/* Стили для логотипа */
+.logo {
+    align-items: center; /* Центрируем элементы внутри контейнера */
+    display: inline-flex; /* Используем inline-flex для горизонтального выравнивания */
+    font-size: 15px; /* Размер шрифта */
+    font-weight: 600; /* Вес шрифта */
+    line-height: 150%; /* Высота строки */
+    color: #0c0e10; /* Цвет текста */
+}
+/* Стили для изображения в шапке */
+.img-header {
+    width: 850px; /* Ширина изображения */
+    height: 350px; /* Высота изображения */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Стили для верхней шапки */
+#header-top {
+    position: fixed; /* Фиксированное позиционирование для шапки */
+    top: 0; /* Располагаем шапку вверху экрана */
+    width: 100%; /* Ширина 100% от родительского элемента */
+    z-index: 500; /* Устанавливаем слой для наложения */
+    background: rgba(255, 165, 0, 0); /* Прозрачный фоновый цвет */
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    justify-content: space-between; /* Распределяем элементы по краям */
+    padding: 25px 70px; /* Отступы внутри шапки */
+    transition: background-color 0.5s; /* Плавный переход фона */
+}
+
+/* Стили для нижней шапки (меню) */
+#header-bottom {
+    position: sticky; /* Прилипающее позиционирование */
+    top: 0; /* Располагаем в верхней части экрана */
+    padding: 25px 0; /* Отступ сверху и снизу */
+    width: 50%; /* Ширина 50% от родительского элемента */
+    z-index: 1000; /* Устанавливаем слой для наложения */
+}
+/*Стили для кнопок в шапке */
+
+.button-header {
+    display: flex; /* Используем Flexbox для выравнивания содержимого */ 
+    align-items: center; /* Центрируем кнопки по вертикали */
+}
+    .button-header .button
+{
+    border: 2px solid #370b0b; /* Граница кнопки */
+
+    background-color: transparent; /* Прозрачный фоновый цвет */
+    padding: 7px 14px; /* Внутренние отступы кнопки */
+
+    margin: 0 10px; /* Отступы справа и слева */
+
+    border-radius: 3px; /* Закругленные углы */
+
+    color: #370b0b; /* Цвет текста */
+
+    cursor: pointer; /* Курсор руки при наведении */
+    font-size: 14px; /* Размер шрифта */
+
+    font-weight: 600; /* Вес шрифта */
+
+    transition: all 250ms ease; /* Плавный переход для всех свойств */
+}
+.button-header .button:hover{
+        color:#fff;
+        background-color:#370b0b;
+}
+/* Стили для меню внутри нижней шапки */
+
+.menu {
+    width: 100%; /* Ширина 100% от родительского элемента*/
+        
+display: flex;
+        /* Используем Flexbox для выравнивания содержимого */
+        justify-content: center; 
+           /* Центрируем элементы по горизонтали */
+
+}
+.menu li {
+    display: inline; /* Располагаем элементы списка в строку */ 
+    padding: 0 40px; /* Отступы справа и слева */
+    
+}
+.menu a {
+    font-size: 15px; /* Размер шрифта */
+
+    font-weight: 600; /* Вес шрифта */
+
+    line-height: 150%; /* Высота строки */
+
+    color: #0c0e10; /* Цвет текста */
+
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+    .menu a:hover {
+        color: #000; /* Цвет текста при наведении */
+    }
+    .container{
+        width:82%;
+        border:2px solid #cacaca;
+        border-radius:3px;
+        box-shadow:5px 5px 10px rgba(0,0,0,0.4)
+    }
+    .container-section{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-bottom:20px;
+        margin:40px;
+    }
+    .info-section{
+        margin-bottom:20px;
+        font-size:40px;
+        color:#370b0b;
+    }
+.text {
+    text-indent: 40px;
+    margin: 5px;
+    text-align: justify;
+    font-size: 20px;
+    color: #370b0b;
+}
