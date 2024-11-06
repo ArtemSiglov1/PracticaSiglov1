@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\313RN\\WORK\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+      "projectUniqueName": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
       "projectName": "TravelAgency.DAL",
-      "projectPath": "D:\\313RN\\WORK\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+      "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
       "packagesPath": "C:\\Users\\kab-35-17\\.nuget\\packages\\",
-      "outputPath": "D:\\313RN\\WORK\\TravelAgency\\TravelAgency.DAL\\obj\\",
+      "outputPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

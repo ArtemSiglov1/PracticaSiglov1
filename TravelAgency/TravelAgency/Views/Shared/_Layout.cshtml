@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TravelAgency</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/shared_script.js" />
     <link rel="stylesheet" href="~/css/Shared.css" />
-    @*<link rel="stylesheet" href="~/css/shared_script.js" />*@
+    <link rel="stylesheet" href="~/css/home.css" />
 </head>
 <body>
-    <script src="~/css/shared_script.js"></script>
 
     <div id="header-top">
         <div class="logo">Мир путешествий</div>
@@ -28,6 +28,7 @@
             </ul>
         </div>
     </div>
+
     <div class="container">
         @RenderBody()
     </div>
@@ -41,5 +42,7 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)*@
+    <script src="~/js/home_script.js"></script>
+    <script src="~/css/shared_script.js"></script>
 </body>
 </html>

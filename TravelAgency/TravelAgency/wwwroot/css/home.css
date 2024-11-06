@@ -1,0 +1,126 @@
+﻿.container-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 40px
+}
+
+.info-sections {
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #370b0b;
+}
+
+.text {
+    text-indent: 40px;
+    margin: 5px;
+    text-align: justify;
+    font-size: 20px;
+    color: #370b0b;
+}
+
+/* Контейнер для карточек */
+.card-container {
+    overflow: hidden; /* Скрываем карточки, которые не помещаются */
+    width: 100%; /* Задаем ширину, можно настроить */
+    position: relative;
+}
+
+/* Внешняя обертка */
+.card-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+/* Карточка */
+.card {
+    min-width: calc(33.33% - 20px); /* Три карточки в ряд */
+    margin: 10px;
+    background-color: rgba(255, 165, 3, 1); /* Прозрачный фоновый цвет */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-size: cover; /* заполнение фонового изображения */
+    background-position: center;
+}
+
+    /* Изображение в карточке */
+    .card img {
+        width: 100%;
+        height: 260px;
+    }
+
+    /* Заголовок карточки */
+    .card h3 {
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+        background: #fff;
+    }
+
+    .card p {
+        padding: 20px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+
+/* Стрелочки */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 50;
+    display: block;
+}
+
+    .arrow.left {
+        left: 0;
+    }
+
+    .arrow.right {
+        right: 0;
+    }
+
+.container-row {
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 30px;
+}
+
+.row-item {
+    width: 30%;
+    background: #fff;
+    margin: 25px 0px;
+}
+
+    .row-item h2 {
+        font-weight: 400;
+        font-size: 26px;
+        margin: 8px 0;
+    }
+
+.item-img {
+    width: 90px;
+    opacity: 0.75;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.item-img:hover {
+        background: rgba(255, 165, 3, 1);
+        margin: 5px;
+        width: 100px;
+}
