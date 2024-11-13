@@ -1,0 +1,12 @@
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\TravelAgency.Domain.deps.json
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\ref\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\TravelAgency.Domain.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.csproj.AssemblyReference.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.AssemblyInfoInputs.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.AssemblyInfo.cs
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.csproj.CoreCompileInputs.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\ref\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.pdb

@@ -74,3 +74,4 @@ D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\ref
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\TravelAgency.pdb
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\TravelAgency.genruntimeconfig.cache
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\TravelAgency.csproj.CopyComplete
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\Razor\Views\Shared\_LoginRegistrationPartial.cshtml.g.cs

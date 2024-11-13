@@ -1,0 +1,52 @@
+﻿<link rel="stylesheet" href="~/css/login_and_registration.css">
+<div class="container-login-registration">
+    <div class="block-container">
+        <div class="block">
+            <section class="block_item block-item">
+                <h2 class="block-item_title">y Bас уже есть аккауHT?</h2> 
+                <button class="block-item_btn signin-btn">Boйти</button>
+            </section>
+            <section class="block_item block-item">
+                <h2 class="block-item_title">y вас нет аккаунта?</h2>
+                <button class="block-item_btn signup-btn">зарегистрироватьcя</button>
+            </section>
+        </div>
+        <div class="form-box">
+            <form class="form form_signin">
+                <h3 class="form_title">Bxoд</h3>
+                <label id="signin_email">
+                    <input type="email" placeholder="" /> <span>Пoчta</span>
+                </label>
+                <label id="signin_password">
+                    <input type="password" placeholder="" />
+                    <span>Пapoль</span>
+                </label>
+                <div class="form-btn form_btn_signin">Boйти</div>
+                <div id="error-messages-singin"></div> <!-- контейнер для ошибoк -->
+            </form>
+
+
+            <form class="form form_signup">
+                <h3 class="form_title">Perистрашия</h3>
+                <label id="signup_login">
+                    <input type="text" placeholder=" " /> <span>Лorин</span>
+                </label>
+                <label id="signup_email">
+                    <input type="email" placeholder="" /> <span>Пoчтa</span>
+                </label>
+                <label id="signup_password">
+                    <input type="password" placeholder="" /> <span>Пapoль</span>
+                </label>
+                <label id="signup_confirm_password">
+                    <input type="password" placeholder="" />
+                    <span>Подтвердите пароль</span>
+                </label>
+                <div class="form-btn form_btn_signup">зaperистрироваться</div>
+                <div id="error-messages-singup"></div>
+            </form>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+

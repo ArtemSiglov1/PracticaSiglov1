@@ -30,6 +30,10 @@ namespace TravelAgency.Controllers
         {
             return View();
         }
+        public IActionResult _LoginRegistrationPartial()
+        {
+            return View();
+        }
 
 
     }

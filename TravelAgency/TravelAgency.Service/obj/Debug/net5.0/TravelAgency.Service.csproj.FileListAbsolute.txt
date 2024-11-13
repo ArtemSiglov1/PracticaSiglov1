@@ -1,0 +1,12 @@
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Service.deps.json
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Service.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\ref\TravelAgency.Service.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Service.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.csproj.AssemblyReference.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.AssemblyInfoInputs.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.AssemblyInfo.cs
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.csproj.CoreCompileInputs.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\ref\TravelAgency.Service.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.pdb
