@@ -75,3 +75,5 @@ D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\Tra
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\TravelAgency.genruntimeconfig.cache
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\TravelAgency.csproj.CopyComplete
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\obj\Debug\net5.0\Razor\Views\Shared\_LoginRegistrationPartial.cshtml.g.cs
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\TravelAgency.Domain.pdb

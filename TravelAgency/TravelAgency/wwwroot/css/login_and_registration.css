@@ -118,7 +118,6 @@ span {
     background-color: #fff;
 }
 .form-btn {
-   
     border: none;
     cursor: pointer;
     background-color: rgb(255, 165, 0);
@@ -131,7 +130,6 @@ span {
 .form_btn_signup {
     background-color: #370beb;
 }
-
 .form {
     width: 100%;
     padding: 50px;
@@ -154,4 +152,16 @@ span {
 .form-box.active .form_signup {
     left: 0;
     transition: 0.25s;
+}
+#error-messages-signin {
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+#error-messages-signup {
+    margin-top: 10px;
 }

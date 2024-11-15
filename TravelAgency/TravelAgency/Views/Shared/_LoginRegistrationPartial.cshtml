@@ -1,52 +1,59 @@
-﻿<link rel="stylesheet" href="~/css/login_and_registration.css">
+﻿<link rel="stylesheet" href="~/css/login_and_registration.css" />
+
+
 <div class="container-login-registration">
     <div class="block-container">
+
         <div class="block">
             <section class="block_item block-item">
-                <h2 class="block-item_title">y Bас уже есть аккауHT?</h2> 
-                <button class="block-item_btn signin-btn">Boйти</button>
+                <img class="img-sign" src="~/ImageCards/m4.jpg" />
+                <h2 class="block-item_title">У вас уже есть аккаунт?</h2>
+                <button class="block-item_btn signin-btn">Войти</button>
             </section>
             <section class="block_item block-item">
-                <h2 class="block-item_title">y вас нет аккаунта?</h2>
-                <button class="block-item_btn signup-btn">зарегистрироватьcя</button>
+                <img class="img-sign" src="~/ImageCards/m82.jpg" />
+                <h2 class="block-item_title">У вас ещё нет аккаунта?</h2>
+                <button class="block-item_btn signup-btn">Зарегистрироваться</button>
             </section>
         </div>
         <div class="form-box">
             <form class="form form_signin">
-                <h3 class="form_title">Bxoд</h3>
-                <label id="signin_email">
-                    <input type="email" placeholder="" /> <span>Пoчta</span>
+                <h3 class="form_title">Вход</h3>
+                <label>
+                    <input type="email" placeholder=" " id="signin_email" />
+                    <span>Почта</span>
                 </label>
-                <label id="signin_password">
-                    <input type="password" placeholder="" />
-                    <span>Пapoль</span>
+                <label>
+                    <input type="password" placeholder=" " id="signin_password" />
+                    <span>Пароль</span>
                 </label>
-                <div class="form-btn form_btn_signin">Boйти</div>
-                <div id="error-messages-singin"></div> <!-- контейнер для ошибoк -->
+                <div class="form-btn form_btn_signin">Войти</div>
+
+                <div id="error-messages-signin"></div>
             </form>
-
-
             <form class="form form_signup">
-                <h3 class="form_title">Perистрашия</h3>
-                <label id="signup_login">
-                    <input type="text" placeholder=" " /> <span>Лorин</span>
+                <h3 class="form_title">Регистрация</h3>
+                <label>
+                    <input type="text" placeholder=" " id="signup_login" />
+                    <span>Логин</span>
                 </label>
-                <label id="signup_email">
-                    <input type="email" placeholder="" /> <span>Пoчтa</span>
+                <label>
+                    <input type="email" placeholder=" " id="signup_email" />
+                    <span>Почта</span>
                 </label>
-                <label id="signup_password">
-                    <input type="password" placeholder="" /> <span>Пapoль</span>
+                <label>
+                    <input type="password" placeholder=" " id="signup_password" />
+                    <span>Пароль</span>
                 </label>
-                <label id="signup_confirm_password">
-                    <input type="password" placeholder="" />
+                <label>
+                    <input type="password" placeholder=" " id="signup_confirm_password" />
                     <span>Подтвердите пароль</span>
                 </label>
-                <div class="form-btn form_btn_signup">зaperистрироваться</div>
-                <div id="error-messages-singup"></div>
+                <div class="form-btn form_btn_signup">Зарегистрироваться</div>
+
+                <div id="error-messages-signup"></div>
             </form>
         </div>
     </div>
     <div class="overlay"></div>
 </div>
-
-

@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "TravelAgency/1.0.0": {
         "dependencies": {
+          "TravelAgency.Domain": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -322,6 +323,14 @@
         },
         "compile": {
           "TravelAgency.dll": {}
+        }
+      },
+      "TravelAgency.Domain/1.0.0": {
+        "runtime": {
+          "TravelAgency.Domain.dll": {}
+        },
+        "compile": {
+          "TravelAgency.Domain.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2026,6 +2035,11 @@
   },
   "libraries": {
     "TravelAgency/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TravelAgency.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

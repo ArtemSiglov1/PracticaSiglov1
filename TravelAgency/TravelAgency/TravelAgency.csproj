@@ -8,4 +8,8 @@
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TravelAgency.Domain\TravelAgency.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

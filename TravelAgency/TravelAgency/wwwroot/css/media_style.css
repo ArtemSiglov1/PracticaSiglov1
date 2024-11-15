@@ -1,0 +1,29 @@
+﻿@media(max-wight:992px){
+    .button-header{
+        display:none;
+    }
+    .menu{
+        display:none;
+    }
+    .img-header{
+        width:430px;
+        height:200px;
+        margin-top:40px;
+    }
+    #header-top{
+        padding:7px 5px;
+    }
+    #header-bottom{
+        padding:0px;
+    }
+    .icon{
+        display:flex;
+        margin:auto 0;
+        color:#370b0b;
+        padding:5px 10px;
+        cursor: pointer;
+        border:1px solid #370b0b;
+        border-radius:4px;
+        font-size:20px;
+    }
+}
