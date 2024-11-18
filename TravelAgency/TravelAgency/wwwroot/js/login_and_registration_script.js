@@ -9,6 +9,9 @@
     }
 
     document.getElementById("click-to-hide").addEventListener('click', hiddenOpen_Closeclick);
+    document.getElementById("side-menu-button-click-to-hide").addEventListener("click", hiddenOpen_Closeclick);
+
+
     document.querySelector(".overlay").addEventListener('click', hiddenOpen_Closeclick);
 
     const signInBtn = document.querySelector(".signin-btn");
@@ -137,4 +140,5 @@
             hiddenOpen_Closeclick();
         }
     }
+
 })

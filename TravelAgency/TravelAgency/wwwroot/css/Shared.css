@@ -64,7 +64,8 @@ body {
     display: flex; /* Используем Flexbox для выравнивания содержимого */ 
     align-items: center; /* Центрируем кнопки по вертикали */
 }
-    .button-header .button
+    .button-header .button,
+    .side-menu .button
 {
     border: 2px solid #370b0b; /* Граница кнопки */
 
@@ -84,7 +85,8 @@ body {
 
     transition: all 250ms ease; /* Плавный переход для всех свойств */
 }
-.button-header .button:hover{
+.button-header .button:hover,
+.side-menu .button:hover {
         color:#fff;
         background-color:#370b0b;
 }
@@ -104,7 +106,8 @@ display: flex;
     padding: 0 40px; /* Отступы справа и слева */
     
 }
-.menu a {
+.menu a,
+.side-menu a{
     font-size: 15px; /* Размер шрифта */
 
     font-weight: 600; /* Вес шрифта */
@@ -166,3 +169,30 @@ footer .footer-right {
 .icon{
     display:none;
 }
+
+/* Стили для выдвигающегося меню*/
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(255, 165, 0, 1);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    z-index: 200;
+}
+/* Стили для ссылок в меню */
+    .side-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
+        display: grid;
+        justify-content: space-around;
+    }
+        .side-menu ul li {
+            margin: 10px 0;
+        }

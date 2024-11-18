@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var copacity = Math.min(scrollTop / maxScroll, 1);
         header.style.backgroundColor = `rgba(255,165,0,${copacity})`;
     });
+    function toggleMenu() {
+        const sideMenu = document.getElementById('side-menu');
+        sideMenu.classList.toggle('active');
+    }
+    document.getElementById('hamburger').addEventListener('click', toggleMenu);
 });
 
     

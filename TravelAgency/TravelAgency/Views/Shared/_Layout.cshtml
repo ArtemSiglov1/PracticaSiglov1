@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TravelAgency</title>
    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" href="~/css/shared_script.js" />
     <link rel="stylesheet" href="~/css/Shared.css" />
     <link rel="stylesheet" href="~/css/home.css" />
+    <link rel="stylesheet" href="~/css/media_style.css"/>
     
 </head>
 <body>
@@ -29,6 +29,16 @@
                 <li><a href="#services">Услуги</a></li>
             </ul>
         </div>
+        <div id="side-menu" class="side-menu">
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#countries">Страны</a></li>
+                <li><a href="#services">Услуги</a></li>
+            </ul>
+        </div>
+        <button class="button" id="side-menu-button-click-to-hide" type="button" name="button">Войти</button>
+
     </div>
 
     <div class="container">
@@ -62,5 +72,6 @@
     <script src="~/js/home_script.js"></script>
     <script src="~/css/shared_script.js"></script>
     <script src="~/js/login_and_registration_script.js"></script>
+    
 </body>
 </html>
