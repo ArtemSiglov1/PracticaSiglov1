@@ -4,20 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TravelAgency</title>
-   @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" href="~/css/Shared.css" />
-    <link rel="stylesheet" href="~/css/home.css" />
-    <link rel="stylesheet" href="~/css/media_style.css"/>
-    
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/Shared.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/media_style.css" asp-append-version="true"/>
+
 </head>
 <body>
     @await Html.PartialAsync("_LoginRegistrationPartial")
     <div id="header-top">
-        <div id="hamburger" class="icon">&#9776;</div>
         <div class="logo">Мир путешествий</div>
         <div class="button-header">
             <button class="button" id="click-to-hide">Войти</button>
         </div>
+        <div id="hamburger" class="icon">&#9776;</div>
     </div>
     <img class="img-header" src="~/images/Designer.jpg" />
     <div id="header-bottom">
@@ -29,16 +29,16 @@
                 <li><a href="#services">Услуги</a></li>
             </ul>
         </div>
-        <div id="side-menu" class="side-menu">
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#contact">Контакты</a></li>
-                <li><a href="#countries">Страны</a></li>
-                <li><a href="#services">Услуги</a></li>
-            </ul>
-        </div>
-        <button class="button" id="side-menu-button-click-to-hide" type="button" name="button">Войти</button>
+    </div>
 
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#countries">Страны</a></li>
+            <li><a href="#services">Услуги</a></li>
+        </ul>
+        <button class="button" id="side-menu-button-click-to-hide" type="button" name="button">Войти</button>
     </div>
 
     <div class="container">
@@ -59,9 +59,9 @@
         <div class="footer-right">
             <div class="menu">
                 <ul>
-                    
+
                     <li><a href="#home">Главная</a></li>
-                    <li><a href="#contact">KOHTAKTы</a></li> 
+                    <li><a href="#contact">KOHTAKTы</a></li>
                     <li><a href="#countries">Страны</a></li>
                     <li><a href="#services">уcлyrи</a></li>
                 </ul>
@@ -72,6 +72,6 @@
     <script src="~/js/home_script.js"></script>
     <script src="~/css/shared_script.js"></script>
     <script src="~/js/login_and_registration_script.js"></script>
-    
+
 </body>
 </html>

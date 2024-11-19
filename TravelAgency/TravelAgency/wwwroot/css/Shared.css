@@ -185,6 +185,7 @@ footer .footer-right {
     transition: right 0.3s ease;
     z-index: 200;
 }
+
 /* Стили для ссылок в меню */
     .side-menu ul {
         list-style-type: none;
