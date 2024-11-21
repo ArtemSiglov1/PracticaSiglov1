@@ -1,18 +1,27 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+
 
 namespace TravelAgency
 {
     public class Startup
     {
+        //private IConfigurationRoot root;
+
+        //public Startup(IWebHostEnvironment hosting)
+        //{
+        //    root = new ConfigurationBuilder()
+        //        .SetBasePath(hosting.ContentRootPath)
+        //        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        //        .Build();
+        //}
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -20,13 +29,23 @@ namespace TravelAgency
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string conn = "Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=111111";
+            // Добавляем DbContext с использованием строки подключения
+            services.AddDbContext<DbContext>(options =>
+                options.UseNpgsql(conn));
+            //services.AddTransient<ICars, CarRepository>();
+            //services.AddTransient<ICarsCategory, CategoryRepository>();
+            //services.AddTransient<ICars, MockCars>();
+            //services.AddTransient<ICarsCategory, MockCategory>();
+            //services.AddTransient<IDataModulService, DataService>();
+            //services.AddTransient<IStorageService, StorageService>();
+            //services.AddTransient<ISellerService, SellerService>();
+            //services.AddTransient<IClientService, ClientService>();
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -36,21 +55,23 @@ namespace TravelAgency
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
+            //app.UseMvc();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=SiteInformation}/{id?}");
+                //endpoints.MapControllerRoute(
+                //                name: "default",
+                //                pattern: "{controller=Shops}/{action=Result}");
             });
         }
     }
