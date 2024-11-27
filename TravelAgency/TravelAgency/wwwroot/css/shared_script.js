@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var maxScroll = 250;
 
         var copacity = Math.min(scrollTop / maxScroll, 1);
-        header.style.backgroundColor = `rgba(255,165,0,${copacity})`;
+        header.style.backgroundColor = `rgba(210, 180, 140,${copacity})`;
     });
 
     function toogleMenu() {

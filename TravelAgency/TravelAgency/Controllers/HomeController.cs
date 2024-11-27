@@ -46,7 +46,7 @@ namespace TravelAgency.Controllers
                     {
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                             new System.Security.Claims.ClaimsPrincipal(response));
-                        return Redirect("/Home/SiteInformation");
+                        return Ok(model) /*Redirect("/Home/SiteInformation")*/;
                     }
 
                     // Если response null, можно добавить ошибку
@@ -92,7 +92,7 @@ namespace TravelAgency.Controllers
                     // Если регистрация прошла успешно
                     if (response != null)
                     {
-                        return Ok(model);  // Возвращаем успешный ответ
+                        return Ok(model)/*Redirect("/Home/SiteInformation")*/;  // Возвращаем успешный ответ
                     }
 
                     // В случае ошибки (например, если ошибка в response)

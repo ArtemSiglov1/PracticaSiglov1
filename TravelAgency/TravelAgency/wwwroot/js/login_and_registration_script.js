@@ -32,129 +32,129 @@
 
 
 
-    //const form_btn_signin = document.querySelector('.form_btn_signin');
-    //const form_btn_signup = document.querySelector('.form_btn_signup');
+    const form_btn_signin = document.querySelector('.form_btn_signin');
+    const form_btn_signup = document.querySelector('.form_btn_signup');
 
-    //if (form_btn_signin) {
-    //    form_btn_signin.addEventListener('click', function () {
-    //        const requestURL = '/Home/Login';
+    if (form_btn_signin) {
+        form_btn_signin.addEventListener('click', function () {
+            const requestURL = '/Home/Login';
 
-    //        const errorContainer = document.getElementById('error-messages-singin');
+            const errorContainer = document.getElementById('error-messages-singin');
 
-    //        const form = {
-    //            email: document.getElementById('signin_email'),
-    //            password: document.getElementById('signin_password')
-    //        }
+            const form = {
+                email: document.getElementById('signin_email'),
+                password: document.getElementById('signin_password')
+            }
 
-    //        const body = {
-    //            email: form.email.value,
-    //            password: form.password.value
-    //        }
+            const body = {
+                email: form.email.value,
+                password: form.password.value
+            }
 
-    //        sendRequest('POST', requestURL, body)
-    //            .then(data => {
-    //                cleaningAndClosingForm(form, errorContainer);
+            sendRequest('POST', requestURL, body)
+                .then(data => {
+                    cleaningAndClosingForm(form, errorContainer);
 
-    //                console.log('Успешный ответ:', data);
+                    console.log('Успешный ответ:', data);
 
-    //                location.reload()
-    //            })
-    //            .catch(err => {
-    //                displayErrors(err, errorContainer);
+                    location.reload()
+                })
+                .catch(err => {
+                    displayErrors(err, errorContainer);
 
-    //                console.log(err);
-    //            });
+                    console.log(err);
+                });
 
-    //    });
+        });
 
-    //}
-    //if (form_btn_signup) {
-    //    form_btn_signup.addEventListener('click', function () {
-    //        const requestURL = '/Home/Register';
+    }
+    if (form_btn_signup) {
+        form_btn_signup.addEventListener('click', function () {
+            const requestURL = '/Home/Register';
 
-    //        const errorContainer = document.getElementById("error_messages_singup");
+            const errorContainer = document.getElementById("error_messages_singup");
 
-    //        const form = {
-    //            login: document.getElementById('signup_login'),
-    //            email: document.getElementById('signup_email'),
-    //            password: document.getElementById('signup_password'),
-    //            passwordConfirm: document.getElementById('signup_confirm_password')
-    //        }
+            const form = {
+                login: document.getElementById('signup_login'),
+                email: document.getElementById('signup_email'),
+                password: document.getElementById('signup_password'),
+                passwordConfirm: document.getElementById('signup_confirm_password')
+            }
 
-    //        const body = {
-    //            login: form.login.value,
-    //            email: form.email.value,
-    //            password: form.password.value,
-    //            passwordConfirm: form.passwordConfirm.value,
-    //        }
+            const body = {
+                login: form.login.value,
+                email: form.email.value,
+                password: form.password.value,
+                passwordConfirm: form.passwordConfirm.value,
+            }
 
-    //        sendRequest('POST', requestURL, body)
-    //            .then(data => {
-    //                cleaningAndClosingForm(form, errorContainer);
+            sendRequest('POST', requestURL, body)
+                .then(data => {
+                    cleaningAndClosingForm(form, errorContainer);
 
-    //                console.log('Успешный ответ:', data);
+                    console.log('Успешный ответ:', data);
 
-    //                location.reload()
-    //            })
-    //            .catch(err => {
-    //                //displayErrors(err, errorContainer);
+                    location.reload()
+                })
+                .catch(err => {
+                    //displayErrors(err, errorContainer);
 
-    //                console.log(err);
-    //            });
-    //    });
-    //}
+                    console.log(err);
+                });
+        });
+    }
 
-    //function sendRequest(method, url, body = null) {
-    //    const headers = {
-    //        'Content-Type': 'application/json'
-    //    };
+    function sendRequest(method, url, body = null) {
+        const headers = {
+            'Content-Type': 'application/json'
+        };
 
-    //    return fetch(url, {
-    //        method: method,
-    //        body: JSON.stringify(body),
-    //        headers: headers
-    //    })
-    //        .then(response => {
-    //            if (!response.ok) {
-    //                // Попробуем сначала получить текстовый ответ, если не удалось распарсить JSON
-    //                return response.text().then(text => {
-    //                    try {
-    //                        const errorData = JSON.parse(text); // Попытка распарсить текст как JSON
-    //                        throw errorData; // Бросаем ошибки для обработки в .catch()
-    //                    } catch (error) {
-    //                        // Если ошибка при парсинге JSON, выбрасываем текст как ошибку
-    //                        throw { message: 'Ответ сервера не является валидным JSON', details: text };
-    //                    }
-    //                });
-    //            }
-    //            // Если ответ успешен, возвращаем распарсенный JSON
-    //            return response.json();
-    //        });
-    //}
+        return fetch(url, {
+            method: method,
+            body: JSON.stringify(body),
+            headers: headers
+        })
+            .then(response => {
+                if (!response.ok) {
+                    // Попробуем сначала получить текстовый ответ, если не удалось распарсить JSON
+                    return response.text().then(text => {
+                        try {
+                            const errorData = JSON.parse(text); // Попытка распарсить текст как JSON
+                            throw errorData; // Бросаем ошибки для обработки в .catch()
+                        } catch (error) {
+                            // Если ошибка при парсинге JSON, выбрасываем текст как ошибку
+                            throw { message: 'Ответ сервера не является валидным JSON', details: text };
+                        }
+                    });
+                }
+                // Если ответ успешен, возвращаем распарсенный JSON
+                return response.json();
+            });
+    }
 
 
-    //// Функция для отображения ошибок
-    //function displayErrors(errors, errorContainer) {
+    // Функция для отображения ошибок
+    function displayErrors(errors, errorContainer) {
 
-    //    errorContainer.innerHTML = ''; // Очистить предыдущие ошибки
-    //    errors.forEach(error => {
-    //        const errorMessage = document.createElement('div');
-    //        errorMessage.classList.add('error');
-    //        errorMessage.textContent = error;
-    //        errorContainer.appendChild(errorMessage);
-    //    });
-    //}
+        errorContainer.innerHTML = ''; // Очистить предыдущие ошибки
+        errors.forEach(error => {
+            const errorMessage = document.createElement('div');
+            errorMessage.classList.add('error');
+            errorMessage.textContent = error;
+            errorContainer.appendChild(errorMessage);
+        });
+    }
 
-    //// Функция очистки и закрытия формы 
-    //function cleaningAndClosingForm(form, errorContainer) {
+    // Функция очистки и закрытия формы 
+    function cleaningAndClosingForm(form, errorContainer) {
 
-    //    errorContainer.innerHTML = '';
-    //    for (const key in form) {
-    //        if (form.hasOwnProperty(key)) {
-    //            form[key].value = ''; // Сброс значений полей формы
-    //        }
-    //    }
-    //    hiddenOpen_Closeclick();
-    //}
+        errorContainer.innerHTML = '';
+        for (const key in form) {
+            if (form.hasOwnProperty(key)) {
+                form[key].value = ''; // Сброс значений полей формы
+            }
+        }
+        hiddenOpen_Closeclick();
+    }
 
 });

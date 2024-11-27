@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TravelAgency</title>
+    <title>@ViewData["Title"] - Bookstore</title>
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/Shared.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true"/>
@@ -13,7 +13,7 @@
 <body>
     @await Html.PartialAsync("_LoginRegistrationPartial")
     <div id="header-top">
-        <div class="logo">Мир путешествий</div>
+        <div class="logo">Bookstore</div>
         <div class="button-header">
             @if (User.Identity.IsAuthenticated)
             {
@@ -32,7 +32,7 @@
             <ul>
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#contact">Контакты</a></li>
-                <li><a href="#countries">Страны</a></li>
+                <li><a href="#countries">Каталог</a></li>
                 <li><a href="#services">Услуги</a></li>
             </ul>
         </div>
@@ -42,7 +42,7 @@
         <ul>
             <li><a href="#home">Главная</a></li>
             <li><a href="#contact">Контакты</a></li>
-            <li><a href="#countries">Страны</a></li>
+            <li><a href="#countries">Каталог</a></li>
             <li><a href="#services">Услуги</a></li>
         </ul>
         @if (User.Identity.IsAuthenticated)
@@ -62,13 +62,15 @@
 
     <footer>
         <div class="footer-left">
-            <div class="logo">Мир Путешествий</div>
+            <div class="logo">Bookstore</div>
             <p>
             </p>
-            Мы - туристическое агентство, которое помогает воплощать мечты о путешествиях в реальность.
-            Предлагаем широкий выбор туров по популярным и экзотическим направлениям. Мы заботимся о каждом клиенте, предоставляя индивидуальные консультации и лучший сервис.
-            <div class="footer-TravelAgency">
-                &copy; 2024 - TravelAgency
+            Мы — книжный магазин, где каждый найдет книгу по душе. 
+            У нас представлены лучшие произведения для любителей литературы разных жанров — от классики до современных бестселлеров, от научной фантастики до вдохновляющих книг по саморазвитию.
+            Мы тщательно отбираем каждое издание, чтобы предложить нашим читателям только качественные и увлекательные книги. Наши сотрудники всегда готовы помочь в выборе, чтобы ваше знакомство с книгой стало настоящим событием.
+            Погружайтесь в мир книг с нами!
+            <div class="footer-Bookstore">
+                &copy; 2024 - Bookstore
             </div>
         </div>
         <div class="footer-right">
@@ -76,9 +78,9 @@
                 <ul>
 
                     <li><a href="#home">Главная</a></li>
-                    <li><a href="#contact">KOHTAKTы</a></li>
-                    <li><a href="#countries">Страны</a></li>
-                    <li><a href="#services">уcлyrи</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#countries">Каталог</a></li>
+                    <li><a href="#services">Услуги</a></li>
                 </ul>
             </div>
         </div>
