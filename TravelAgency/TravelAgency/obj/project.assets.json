@@ -219,15 +219,6 @@
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Newtonsoft.Json/12.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "Npgsql/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -253,19 +244,6 @@
         },
         "runtime": {
           "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
-        }
-      },
-      "Npgsql.Json.NET/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Npgsql": "5.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Npgsql.Json.NET.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Npgsql.Json.NET.dll": {}
         }
       },
       "System.Collections.Immutable/5.0.0": {
@@ -304,6 +282,22 @@
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "TravelAgency.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Npgsql": "5.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.0",
+          "TravelAgency.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TravelAgency.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TravelAgency.DAL.dll": {}
+        }
+      },
       "TravelAgency.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -312,6 +306,31 @@
         },
         "runtime": {
           "bin/placeholder/TravelAgency.Domain.dll": {}
+        }
+      },
+      "TravelAgency.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TravelAgency.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TravelAgency.Interface.dll": {}
+        }
+      },
+      "TravelAgency.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "TravelAgency.DAL": "1.0.0",
+          "TravelAgency.Interface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TravelAgency.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TravelAgency.Service.dll": {}
         }
       }
     }
@@ -707,36 +726,6 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/12.0.2": {
-      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "type": "package",
-      "path": "newtonsoft.json/12.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
-      ]
-    },
     "Npgsql/5.0.0": {
       "sha512": "kLhzs5OVkljEO6eTSnhaYxY+Cej1hcS7cOb4gP7gylKc5CMMTfmsGGdUW7Ooj5XjeWgx67h9/bj67XjBBlBPxg==",
       "type": "package",
@@ -767,20 +756,6 @@
         "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
         "npgsql.entityframeworkcore.postgresql.5.0.0.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec",
-        "postgresql.png"
-      ]
-    },
-    "Npgsql.Json.NET/5.0.0": {
-      "sha512": "Br1PSbHL3U2st1NOZKb7YdzU0Lz8LfyAUbQgpt3cefiuIRjSk8Mg1NIgQl6Vkv8FQ80beXQZTBc1RSBkZtQPLg==",
-      "type": "package",
-      "path": "npgsql.json.net/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Npgsql.Json.NET.dll",
-        "lib/netstandard2.0/Npgsql.Json.NET.xml",
-        "npgsql.json.net.5.0.0.nupkg.sha512",
-        "npgsql.json.net.nuspec",
         "postgresql.png"
       ]
     },
@@ -953,10 +928,25 @@
         "version.txt"
       ]
     },
+    "TravelAgency.DAL/1.0.0": {
+      "type": "project",
+      "path": "../TravelAgency.DAL/TravelAgency.DAL.csproj",
+      "msbuildProject": "../TravelAgency.DAL/TravelAgency.DAL.csproj"
+    },
     "TravelAgency.Domain/1.0.0": {
       "type": "project",
       "path": "../TravelAgency.Domain/TravelAgency.Domain.csproj",
       "msbuildProject": "../TravelAgency.Domain/TravelAgency.Domain.csproj"
+    },
+    "TravelAgency.Interface/1.0.0": {
+      "type": "project",
+      "path": "../TravelAgency.Interface/TravelAgency.Interface.csproj",
+      "msbuildProject": "../TravelAgency.Interface/TravelAgency.Interface.csproj"
+    },
+    "TravelAgency.Service/1.0.0": {
+      "type": "project",
+      "path": "../TravelAgency.Service/TravelAgency.Service.csproj",
+      "msbuildProject": "../TravelAgency.Service/TravelAgency.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -967,8 +957,8 @@
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Npgsql >= 5.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 5.0.0",
-      "Npgsql.Json.NET >= 5.0.0",
-      "TravelAgency.Domain >= 1.0.0"
+      "TravelAgency.Domain >= 1.0.0",
+      "TravelAgency.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1005,6 +995,9 @@
           "projectReferences": {
             "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj": {
               "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj"
+            },
+            "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Service\\TravelAgency.Service.csproj": {
+              "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Service\\TravelAgency.Service.csproj"
             }
           }
         }
@@ -1044,10 +1037,6 @@
             "version": "[5.0.0, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
-            "target": "Package",
-            "version": "[5.0.0, )"
-          },
-          "Npgsql.Json.NET": {
             "target": "Package",
             "version": "[5.0.0, )"
           }

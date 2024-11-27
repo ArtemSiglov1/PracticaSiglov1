@@ -8,7 +8,7 @@ using TravelAgency.DAL;
 
 namespace TravelAgency.DAL.Migrations
 {
-    [DbContext(typeof(DbContext))]
+    [DbContext(typeof(DataContext))]
     partial class DbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

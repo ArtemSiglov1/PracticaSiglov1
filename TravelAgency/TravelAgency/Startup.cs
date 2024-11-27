@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -5,37 +6,38 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-
-
+using TravelAgency.DAL;
+using TravelAgency.Interface;
+using TravelAgency.Service;
 
 namespace TravelAgency
 {
     public class Startup
     {
-        //private IConfigurationRoot root;
+        private IConfigurationRoot root;
 
-        //public Startup(IWebHostEnvironment hosting)
-        //{
-        //    root = new ConfigurationBuilder()
-        //        .SetBasePath(hosting.ContentRootPath)
-        //        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-        //        .Build();
-        //}
-
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment hosting)
         {
-            Configuration = configuration;
+            root = new ConfigurationBuilder()
+                .SetBasePath(hosting.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
         }
 
-        public IConfiguration Configuration { get; }
+       
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string conn = "Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=111111";
             // Добавляем DbContext с использованием строки подключения
-            services.AddDbContext<DbContext>(options =>
-                options.UseNpgsql(conn));
-            //services.AddTransient<ICars, CarRepository>();
+            services.AddDbContext<DataContext>(options =>
+                options.UseNpgsql(root.GetConnectionString("DefaultConnection")));
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                    options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                });
+            services.AddTransient<IAccountService, AccountService>();
             //services.AddTransient<ICarsCategory, CategoryRepository>();
             //services.AddTransient<ICars, MockCars>();
             //services.AddTransient<ICarsCategory, MockCategory>();
@@ -45,6 +47,8 @@ namespace TravelAgency
             //services.AddTransient<IClientService, ClientService>();
             services.AddControllersWithViews();
         }
+
+
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -62,6 +66,7 @@ namespace TravelAgency
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseAuthentication();
             //app.UseMvc();
 
             app.UseEndpoints(endpoints =>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aZ+YRpH67/UpLNN8KWXT69kvkdsO5S0FUjEcihN2Z7Rgs75a3HMAplhTNy0/wI39dlwgPv0jaySUB02MSz4hxA==",
+  "dgSpecHash": "IKX4LEdwEeEP7chyiEYgzYCKDmBy8IUyGfkWeNFPnF1Z0U9Jc8jhyl4TJ6PO7OQ0XstoJopid1nxdiPYjgoFcQ==",
   "success": true,
   "projectFilePath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency\\TravelAgency.csproj",
   "expectedPackageFiles": [
@@ -22,10 +22,8 @@
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-    "C:\\Users\\kab-35-17\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\npgsql\\5.0.0\\npgsql.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.0\\npgsql.entityframeworkcore.postgresql.5.0.0.nupkg.sha512",
-    "C:\\Users\\kab-35-17\\.nuget\\packages\\npgsql.json.net\\5.0.0\\npgsql.json.net.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",

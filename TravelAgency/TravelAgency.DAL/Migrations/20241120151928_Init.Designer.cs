@@ -9,7 +9,7 @@ using TravelAgency.DAL;
 
 namespace TravelAgency.DAL.Migrations
 {
-    [DbContext(typeof(DbContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20241120151928_Init")]
     partial class Init
     {

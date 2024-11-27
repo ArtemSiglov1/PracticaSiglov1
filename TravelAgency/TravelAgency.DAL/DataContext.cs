@@ -6,14 +6,15 @@ using TravelAgency.Domain.Models;
 
 namespace TravelAgency.DAL
 {
-    public class DbContext: Microsoft.EntityFrameworkCore.DbContext
+    public class DataContext: Microsoft.EntityFrameworkCore.DbContext
     {
         protected readonly IConfiguration configuration;
 
-        public DbContext() { }
+        public DataContext() { }
 
-        public DbContext(DbContextOptions<DbContext> options) : base(options)
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
+        
              public DbSet<Shop> Shops { get; set; }
         public DbSet<User> Buyers { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -30,7 +31,7 @@ namespace TravelAgency.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-               .UseNpgsql("Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=111111");
+               .UseNpgsql("Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=123456789");
         }
     }
 }

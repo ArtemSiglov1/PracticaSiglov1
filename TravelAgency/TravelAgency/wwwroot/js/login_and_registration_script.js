@@ -1,7 +1,7 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     function hiddenOpen_Closeclick() {
         let x = document.querySelector(".container-login-registration");
-        if (x.style.display === "none") {
+        if (x.style.display == "none") {
             x.style.display = "grid";
         } else {
             x.style.display = "none";
@@ -9,136 +9,152 @@
     }
 
     document.getElementById("click-to-hide").addEventListener('click', hiddenOpen_Closeclick);
-    document.getElementById("side-menu-button-click-to-hide").addEventListener('click', hiddenOpen_Closeclick);
+    document.getElementById("side-menu-button-click-to-hide").addEventListener("click", hiddenOpen_Closeclick);
+    document.querySelector(".overlay").addEventListener("click", hiddenOpen_Closeclick);
 
 
-    document.querySelector(".overlay").addEventListener('click', hiddenOpen_Closeclick);
-
-    const signInBtn = document.querySelector(".signin-btn");
-    const signUpBtn = document.querySelector(".signup-btn");
-    const formBox = document.querySelector(".form-box");
-    const block = document.querySelector(".block");
+    const signInBtn = document.querySelector('.signin-btn');
+    const signUpBtn = document.querySelector('.signup-btn');
+    const formBox = document.querySelector('.form-box');
+    const block = document.querySelector('.block');
 
     if (signInBtn && signUpBtn) {
         signUpBtn.addEventListener('click', function () {
             formBox.classList.add('active');
             block.classList.add('active');
         });
+
         signInBtn.addEventListener('click', function () {
             formBox.classList.remove('active');
             block.classList.remove('active');
         });
-
-
     }
 
-    const form_btn_signin = document.querySelector('.form_btn_signin');
-    const form_btn_signup = document.querySelector('.form_btn_signup');
 
-    if (form_btn_signin) {
-        form_btn_signin.addEventListener('click', function () {
-            const requestURL = '/Home/Login';
-            console.log("запрос авторизации");
-            const errorContainer = document.getElementById('error-messages-signin');
 
-            const form = {
-                email: document.getElementById('signin_email'),
-                password: document.getElementById('signin_password'),
-            }
+    //const form_btn_signin = document.querySelector('.form_btn_signin');
+    //const form_btn_signup = document.querySelector('.form_btn_signup');
 
-            const body = {
-                email: form.email.value,
-                password: form.password.value
-            }
+    //if (form_btn_signin) {
+    //    form_btn_signin.addEventListener('click', function () {
+    //        const requestURL = '/Home/Login';
 
-            sendRequest('POST', requestURL, body)
-                .then(data => {
-                    cleaningAndClosingForm(form, errorContainer);
+    //        const errorContainer = document.getElementById('error-messages-singin');
 
-                    console.log('Успешный ответ:', data);
+    //        const form = {
+    //            email: document.getElementById('signin_email'),
+    //            password: document.getElementById('signin_password')
+    //        }
 
-                    location.reload();
-                })
-                .catch(err => {
-                    displayErrors(err, errorContainer);
+    //        const body = {
+    //            email: form.email.value,
+    //            password: form.password.value
+    //        }
 
-                    console.log(err);
-                });
-        });
-    }
+    //        sendRequest('POST', requestURL, body)
+    //            .then(data => {
+    //                cleaningAndClosingForm(form, errorContainer);
 
-    if (form_btn_signup) {
-        form_btn_signup.addEventListener('click', function () {
-            const requestURL = '/Home/Register';
-            console.log("регистрация");
-            const errorContainer = document.getElementById('error-messages-signup');
+    //                console.log('Успешный ответ:', data);
 
-            const form = {
-                login: document.getElementById('signup_login'),
-                email: document.getElementById('signup_email'),
-                password: document.getElementById('signup_password'),
-                passwordConfirm: document.getElementById('signup_confirm_password')
-            }
+    //                location.reload()
+    //            })
+    //            .catch(err => {
+    //                displayErrors(err, errorContainer);
 
-            const body = {
-                login: form.login.value,
-                email: form.email.value,
-                password: form.password.value,
-                passwordConfirm: form.passwordConfirm.value
-            }
+    //                console.log(err);
+    //            });
 
-            sendRequest('POST', requestURL, body)
-                .then(data => {
-                    cleaningAndClosingForm(form, errorContainer);
+    //    });
 
-                    console.log('Успешный ответ:', data);
+    //}
+    //if (form_btn_signup) {
+    //    form_btn_signup.addEventListener('click', function () {
+    //        const requestURL = '/Home/Register';
 
-                    location.reload();
-                })
-                .catch(err => {
-                    displayErrors(err, errorContainer);
-                    console.log(err);
-                });
-        });
-    }
+    //        const errorContainer = document.getElementById("error_messages_singup");
 
-    function sendRequest(method, url, body = null) {
-        const headers = {
-            'Content-Type': 'application/json'
-        }
+    //        const form = {
+    //            login: document.getElementById('signup_login'),
+    //            email: document.getElementById('signup_email'),
+    //            password: document.getElementById('signup_password'),
+    //            passwordConfirm: document.getElementById('signup_confirm_password')
+    //        }
 
-        return fetch(url, {
-            method: method,
-            body: JSON.stringify(body),
-            headers: headers
-        }).then(response => {
-            if (!response.ok) {
-                return response.json().then(errorData => {
-                    throw errorData;
-                });
-            }
-            return response.json();
-        })
-    }
+    //        const body = {
+    //            login: form.login.value,
+    //            email: form.email.value,
+    //            password: form.password.value,
+    //            passwordConfirm: form.passwordConfirm.value,
+    //        }
 
-    function displayErrors(errors, errorContainer) {
-        errorContainer.innerHTML = '';
-        errors.forEach(error => {
-            const errorMessage = document.createElement('div');
-            errorMessage.classList.add('error');
-            errorMessage.textContent = error;
-            errorContainer.appendChild(errorMessage);
-        })
-    }
+    //        sendRequest('POST', requestURL, body)
+    //            .then(data => {
+    //                cleaningAndClosingForm(form, errorContainer);
 
-    function cleaningAndClosingForm(form, errorContainer) {
-        errorContainer = '';
-        for (const key in form) {
-            if (form.hasOwnProperty(key)) {
-                form[key].value = '';
-            }
-            hiddenOpen_Closeclick();
-        }
-    }
+    //                console.log('Успешный ответ:', data);
 
-})
+    //                location.reload()
+    //            })
+    //            .catch(err => {
+    //                //displayErrors(err, errorContainer);
+
+    //                console.log(err);
+    //            });
+    //    });
+    //}
+
+    //function sendRequest(method, url, body = null) {
+    //    const headers = {
+    //        'Content-Type': 'application/json'
+    //    };
+
+    //    return fetch(url, {
+    //        method: method,
+    //        body: JSON.stringify(body),
+    //        headers: headers
+    //    })
+    //        .then(response => {
+    //            if (!response.ok) {
+    //                // Попробуем сначала получить текстовый ответ, если не удалось распарсить JSON
+    //                return response.text().then(text => {
+    //                    try {
+    //                        const errorData = JSON.parse(text); // Попытка распарсить текст как JSON
+    //                        throw errorData; // Бросаем ошибки для обработки в .catch()
+    //                    } catch (error) {
+    //                        // Если ошибка при парсинге JSON, выбрасываем текст как ошибку
+    //                        throw { message: 'Ответ сервера не является валидным JSON', details: text };
+    //                    }
+    //                });
+    //            }
+    //            // Если ответ успешен, возвращаем распарсенный JSON
+    //            return response.json();
+    //        });
+    //}
+
+
+    //// Функция для отображения ошибок
+    //function displayErrors(errors, errorContainer) {
+
+    //    errorContainer.innerHTML = ''; // Очистить предыдущие ошибки
+    //    errors.forEach(error => {
+    //        const errorMessage = document.createElement('div');
+    //        errorMessage.classList.add('error');
+    //        errorMessage.textContent = error;
+    //        errorContainer.appendChild(errorMessage);
+    //    });
+    //}
+
+    //// Функция очистки и закрытия формы 
+    //function cleaningAndClosingForm(form, errorContainer) {
+
+    //    errorContainer.innerHTML = '';
+    //    for (const key in form) {
+    //        if (form.hasOwnProperty(key)) {
+    //            form[key].value = ''; // Сброс значений полей формы
+    //        }
+    //    }
+    //    hiddenOpen_Closeclick();
+    //}
+
+});

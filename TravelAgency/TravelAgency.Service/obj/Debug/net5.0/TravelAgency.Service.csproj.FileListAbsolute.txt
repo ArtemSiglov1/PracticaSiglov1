@@ -10,3 +10,10 @@ D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\ne
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\ref\TravelAgency.Service.dll
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\ref\TravelAgency.Service.dll
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.csproj.AssemblyReference.cache
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.DAL.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Interface.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.DAL.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Interface.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\bin\Debug\net5.0\TravelAgency.Domain.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Service\obj\Debug\net5.0\TravelAgency.Service.csproj.CopyComplete
