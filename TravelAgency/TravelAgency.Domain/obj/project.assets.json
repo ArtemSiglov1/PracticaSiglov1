@@ -5,10 +5,14 @@
       "FluentValidation/11.11.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/FluentValidation.dll": {}
+          "lib/net5.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/FluentValidation.dll": {}
+          "lib/net5.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -46,24 +50,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kab-35-17\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Kab-31-16\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
       "projectName": "TravelAgency.Domain",
-      "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
-      "packagesPath": "C:\\Users\\kab-35-17\\.nuget\\packages\\",
-      "outputPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
+      "packagesPath": "C:\\Users\\Kab-31-16\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kab-35-17\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Kab-31-16\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -71,6 +70,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -83,6 +83,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -100,7 +105,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -109,7 +115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

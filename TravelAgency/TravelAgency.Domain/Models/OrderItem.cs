@@ -11,11 +11,11 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// идентиф
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// идентиф заказа
         /// </summary>
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
         /// <summary>
         /// заказ
         /// </summary>
@@ -27,7 +27,7 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// идентиф продукта
         /// </summary>
-        public int BookId { get; set; }
+        public Guid BookId { get; set; }
         /// <summary>
         /// стоимость 
         /// </summary>
@@ -35,6 +35,6 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// количество заказанного товара
         /// </summary>
-        public double Count { get; set; }
+        public int Count { get; set; }
     }
 }

@@ -11,10 +11,9 @@ using TravelAgency.DAL;
 using TravelAgency.Domain.Enums;
 using TravelAgency.Domain.Helpers;
 using TravelAgency.Domain.Models;
-using TravelAgency.Domain.Validators;
-using TravelAgency.Domain.ViewModels;
 using TravelAgency.Interface;
 using TravelAgency.Interface.Models.RegAndLog;
+using TravelAgency.Service.Validators;
 
 namespace TravelAgency.Service
 {
@@ -30,8 +29,7 @@ namespace TravelAgency.Service
         {
             try
             {
-                var validations = new LoginViewModel() { Email = login.Email, Password = login.Password };
-                var valid = new LoginRegistrView {Login= validations,Register= null };
+                var valid = new RegAndLogModel {LoginUser= login,RegistrationUser= null };
                 validationRules = new UserValidator(valid);
                 await validationRules.ValidateAndThrowAsync(valid);
                 await using var db = new DataContext(dbcontextOptions);
@@ -79,8 +77,7 @@ namespace TravelAgency.Service
             {
                 try
                 {
-                    var validations = new RegisterViewModel() { Email = registration.Email, Password = registration.Password, Login = registration.Login, PasswordConfirm = registration.PasswordConfirm };
-                    var valid = new LoginRegistrView { Login = null, Register = validations };
+                    var valid = new RegAndLogModel { LoginUser = null, RegistrationUser = registration };
                     validationRules = new UserValidator(valid);
                     await validationRules.ValidateAndThrowAsync(valid);
 

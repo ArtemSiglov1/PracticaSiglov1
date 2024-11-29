@@ -8,7 +8,7 @@ namespace TravelAgency.Domain.Enums
 {
    public enum StorageTransactionType
     {
-        input,
-        output
+        Take=1,
+        Ship=2
     }
 }

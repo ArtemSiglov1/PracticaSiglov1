@@ -16,5 +16,9 @@ namespace TravelAgency.Domain.Models
         public Roles? Role { get; set;}
         public string? PathImg { get; set; }
         public DateTime? CreatedAt { get; set; }
+        /// <summary>
+        /// Список заказов
+        /// </summary>
+        public List<Order> Orders { get; set; }
     }
 }

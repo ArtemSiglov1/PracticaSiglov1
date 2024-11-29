@@ -7,7 +7,7 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// идентиф
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// дата продажи товара
         /// </summary>
@@ -19,7 +19,7 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// идентиф заказа
         /// </summary>
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
         /// <summary>
         /// заказ
         /// </summary>

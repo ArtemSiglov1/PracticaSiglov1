@@ -21,6 +21,7 @@ namespace TravelAgency.DAL
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<OrderTransaction> OrderTransactions { get; set; }
         public DbSet<Book> Books{ get; set; }
+        public DbSet<Seller> Sellers { get; set; }
         public DbSet<StorageTransaction> StorageTransactions { get; set; }
         public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder =>
         {
@@ -30,8 +31,9 @@ namespace TravelAgency.DAL
         });
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder
-               .UseNpgsql("Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=123456789");
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory)
+                .EnableSensitiveDataLogging()
+               .UseNpgsql("Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=111111");
         }
     }
 }

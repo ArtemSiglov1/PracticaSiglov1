@@ -45,62 +45,56 @@ namespace TravelAgency.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("BuyerId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid?>("BuyerId1")
+                    b.Property<Guid>("BuyerId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<Guid>("SellerId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("BuyerId1");
+                    b.HasIndex("BuyerId");
+
+                    b.HasIndex("SellerId");
 
                     b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("TravelAgency.Domain.Models.OrderItem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
+                        .HasColumnType("uuid");
 
-                    b.Property<int>("BookId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid?>("BookId1")
+                    b.Property<Guid>("BookId")
                         .HasColumnType("uuid");
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("numeric");
 
-                    b.Property<double>("Count")
-                        .HasColumnType("double precision");
-
-                    b.Property<int>("OrderId")
+                    b.Property<int>("Count")
                         .HasColumnType("integer");
 
-                    b.Property<Guid?>("OrderId1")
+                    b.Property<Guid>("OrderId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookId1");
+                    b.HasIndex("BookId");
 
-                    b.HasIndex("OrderId1");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("TravelAgency.Domain.Models.OrderTransaction", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
+                        .HasColumnType("uuid");
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("numeric");
@@ -108,25 +102,40 @@ namespace TravelAgency.DAL.Migrations
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid?>("OrderId1")
+                    b.Property<Guid>("OrderId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId1");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderTransactions");
                 });
 
+            modelBuilder.Entity("TravelAgency.Domain.Models.Seller", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("ShopId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShopId");
+
+                    b.ToTable("Sellers");
+                });
+
             modelBuilder.Entity("TravelAgency.Domain.Models.Shop", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -138,32 +147,28 @@ namespace TravelAgency.DAL.Migrations
 
             modelBuilder.Entity("TravelAgency.Domain.Models.StorageTransaction", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid?>("BookId1")
                         .HasColumnType("uuid");
 
-                    b.Property<double>("Count")
-                        .HasColumnType("double precision");
+                    b.Property<Guid>("BookId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int?>("ShopId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("ShopId")
+                        .HasColumnType("uuid");
 
                     b.Property<int>("TransactionType")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookId1");
+                    b.HasIndex("BookId");
 
                     b.HasIndex("ShopId");
 
@@ -176,7 +181,7 @@ namespace TravelAgency.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Email")
@@ -191,7 +196,7 @@ namespace TravelAgency.DAL.Migrations
                     b.Property<string>("PathImg")
                         .HasColumnType("text");
 
-                    b.Property<int>("Role")
+                    b.Property<int?>("Role")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -202,21 +207,35 @@ namespace TravelAgency.DAL.Migrations
             modelBuilder.Entity("TravelAgency.Domain.Models.Order", b =>
                 {
                     b.HasOne("TravelAgency.Domain.Models.User", "Buyer")
-                        .WithMany()
-                        .HasForeignKey("BuyerId1");
+                        .WithMany("Orders")
+                        .HasForeignKey("BuyerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TravelAgency.Domain.Models.Seller", "Seller")
+                        .WithMany("Orders")
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Buyer");
+
+                    b.Navigation("Seller");
                 });
 
             modelBuilder.Entity("TravelAgency.Domain.Models.OrderItem", b =>
                 {
                     b.HasOne("TravelAgency.Domain.Models.Book", "Book")
                         .WithMany("Items")
-                        .HasForeignKey("BookId1");
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TravelAgency.Domain.Models.Order", "Order")
                         .WithMany("Items")
-                        .HasForeignKey("OrderId1");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Book");
 
@@ -227,22 +246,41 @@ namespace TravelAgency.DAL.Migrations
                 {
                     b.HasOne("TravelAgency.Domain.Models.Order", "Order")
                         .WithMany("OrderTransaction")
-                        .HasForeignKey("OrderId1");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("TravelAgency.Domain.Models.Seller", b =>
+                {
+                    b.HasOne("TravelAgency.Domain.Models.Shop", "Shop")
+                        .WithMany("Sellers")
+                        .HasForeignKey("ShopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Shop");
                 });
 
             modelBuilder.Entity("TravelAgency.Domain.Models.StorageTransaction", b =>
                 {
                     b.HasOne("TravelAgency.Domain.Models.Book", "Book")
                         .WithMany("Transactions")
-                        .HasForeignKey("BookId1");
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("TravelAgency.Domain.Models.Shop", null)
+                    b.HasOne("TravelAgency.Domain.Models.Shop", "Shop")
                         .WithMany("Transactions")
-                        .HasForeignKey("ShopId");
+                        .HasForeignKey("ShopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Book");
+
+                    b.Navigation("Shop");
                 });
 
             modelBuilder.Entity("TravelAgency.Domain.Models.Book", b =>
@@ -259,9 +297,21 @@ namespace TravelAgency.DAL.Migrations
                     b.Navigation("OrderTransaction");
                 });
 
+            modelBuilder.Entity("TravelAgency.Domain.Models.Seller", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("TravelAgency.Domain.Models.Shop", b =>
                 {
+                    b.Navigation("Sellers");
+
                     b.Navigation("Transactions");
+                });
+
+            modelBuilder.Entity("TravelAgency.Domain.Models.User", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

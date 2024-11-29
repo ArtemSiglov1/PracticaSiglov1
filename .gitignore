@@ -1,0 +1,44 @@
+# Обычные файлы Visual Studio
+.vs/
+.vs2019/
+.vs2017/
+.vs2015/
+.idea/
+# Лог-файлы
+*.log
+# Файлы сборки
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]evelopmentPublic/
+[Dd]ist/
+[Dd]istPublish/
+Release/
+ReleasePublic/
+x64/
+x86/
+x64_arm/
+# Бинарные файлы
+*.dll
+*.exe
+*.pdb
+*.cache
+*.obj
+*.lib
+*.so
+*.a
+*.o
+*.idb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# Кэш и временные файлы
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# Файлы среды тестирования
+TestResults/
+# Папки и файлы, связанные с компиляцией и кэшированием
+.vscode/

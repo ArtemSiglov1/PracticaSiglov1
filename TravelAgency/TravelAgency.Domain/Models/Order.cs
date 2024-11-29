@@ -17,12 +17,20 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// идентиф покупателя
         /// </summary>
-        public int BuyerId { get; set; }
+        public Guid BuyerId { get; set; }
         /// <summary>
         /// покупатель для связи 2 таблиц
         /// </summary>
         public User Buyer { get; set; }
-        
+        /// <summary>
+        /// идентиф продавца
+        /// </summary>
+        public Guid SellerId { get; set; }
+        /// <summary>
+        /// продавец
+        /// </summary>
+        public Seller Seller { get; set; }
+
         /// <summary>
         /// объект для слежения за финансами
         /// </summary>

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj": {}
+    "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj": {}
   },
   "projects": {
-    "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj": {
+    "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
         "projectName": "TravelAgency.Domain",
-        "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
-        "packagesPath": "C:\\Users\\kab-35-17\\.nuget\\packages\\",
-        "outputPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
+        "packagesPath": "C:\\Users\\Kab-31-16\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kab-35-17\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Kab-31-16\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -55,7 +57,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,25 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj": {
+    "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj",
+        "projectUniqueName": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj",
         "projectName": "TravelAgency.Interface",
-        "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj",
-        "packagesPath": "C:\\Users\\kab-35-17\\.nuget\\packages\\",
-        "outputPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\obj\\",
+        "projectPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\TravelAgency.Interface.csproj",
+        "packagesPath": "C:\\Users\\Kab-31-16\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Interface\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kab-35-17\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Kab-31-16\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,14 +89,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj": {
-                "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj"
+              "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj": {
+                "projectPath": "C:\\Users\\Kab-31-16\\Documents\\GitHub\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj"
               }
             }
           }
@@ -106,6 +106,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -117,7 +122,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -126,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,3 +10,16 @@ D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\ref\TravelAgency.Domain.dll
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\ref\TravelAgency.Domain.dll
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.csproj.AssemblyReference.cache
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\TravelAgency.Domain.deps.json
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\TravelAgency.Domain.dll
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\bin\Debug\net5.0\TravelAgency.Domain.pdb
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.csproj.AssemblyReference.cache
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.AssemblyInfoInputs.cache
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.AssemblyInfo.cs
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.sourcelink.json
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.dll
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\refint\TravelAgency.Domain.dll
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\TravelAgency.Domain.pdb
+C:\Users\Kab-31-16\Documents\GitHub\PracticaSiglov1\TravelAgency\TravelAgency.Domain\obj\Debug\net5.0\ref\TravelAgency.Domain.dll

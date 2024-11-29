@@ -11,11 +11,15 @@ namespace TravelAgency.Domain.Models
         /// <summary>
         /// идентиф
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// название магаза
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// список продавцов работающих в магазе
+        /// </summary>
+        public List<Seller> Sellers { get; set; }
         /// <summary>
         /// список транзакций на складе привоз\отвоз
         /// </summary>
