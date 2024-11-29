@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestUsers.Interface.Models;
 using TravelAgency.DAL;
 using TravelAgency.Domain.Enums;
 using TravelAgency.Domain.Models;
 using TravelAgency.Interface;
+using TravelAgency.Interface.Models;
 
 namespace TravelAgency.Service
 {
@@ -48,10 +50,24 @@ namespace TravelAgency.Service
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<List<Shop>> GetShops()
+        public async Task<List<Shop>> GetShops(ShopGetListRequest request)
         {
+          
             await using var db = new DataContext(_dbContextOptions);
-            var shops = await db.Shops.ToListAsync();
+            var query=db.Shops.AsQueryable();
+            if (request.Search != null)
+            {
+                query = query.Where(x => x.Name.Contains(request.Search));
+            }
+            var shops = await query.OrderBy(x=>x.Name).Skip((request.Page.Page - 1) * request.Page.PageSize)
+    .Take(request.Page.PageSize).ToListAsync();
+            var count = await query.CountAsync();
+            var pageResponse = new PageResponse
+            {
+                Count = count,
+                Page = request.Page.Page,
+                PageSize = request.Page.PageSize
+            };
             return shops;
         }
         public async Task<Shop?> GetShop(Guid shopId)
@@ -98,10 +114,11 @@ namespace TravelAgency.Service
         /// </summary>
         /// <param name="shopId"></param>
         /// <returns></returns>
-        public async Task<List<Seller>> GetSellers(Guid shopId)
+        public async Task<List<Seller>> GetSellers(SellerListRequest request)
         {
             await using var db = new DataContext(_dbContextOptions);
-            var sellers = await db.Sellers.Where(x => x.ShopId == shopId).ToListAsync();
+            var sellers = await db.Sellers.Where(x => x.ShopId == request.ShopId).OrderBy(x=>x.Name).Skip((request.Page.Page - 1) * request.Page.PageSize)
+    .Take(request.Page.PageSize).ToListAsync();
             return sellers;
         }
         public async Task<Seller?> GetSeller(Guid id)

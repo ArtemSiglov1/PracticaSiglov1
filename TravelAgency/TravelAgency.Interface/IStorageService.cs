@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelAgency.Domain.Models;
+using TravelAgency.Interface.Models;
 
 namespace TravelAgency.Interface
 {
@@ -18,7 +19,7 @@ namespace TravelAgency.Interface
         public Task GetProduct(List<OrderItem> orders, Guid shopId);
         public Task<List<Book>> GetProduct();
         public Task<Seller?> GetSeller(Guid id);
-
+        public Task<List<Seller>> GetSellers(SellerListRequest request);
         /// <summary>
         /// создать магазин
         /// </summary>
@@ -30,7 +31,7 @@ namespace TravelAgency.Interface
         /// выводит все магазины содержащиеся в бд
         /// </summary>
         /// <returns>лист магазинов</returns>
-        public Task<List<Shop>> GetShops();
+        public Task<List<Shop>> GetShops(ShopGetListRequest request);
         public Task<Shop?> GetShop(Guid shopId);
         public Task<List<StorageTransaction>> GetStorageTransaction(Guid shopId);
         public Task<List<OrderTransaction>> GetOrderTransactions(Guid sellerId);
