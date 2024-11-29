@@ -131,6 +131,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -177,7 +183,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj": {
+                "projectPath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

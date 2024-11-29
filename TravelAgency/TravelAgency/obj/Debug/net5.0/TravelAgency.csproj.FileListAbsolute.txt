@@ -90,3 +90,4 @@ D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\Tra
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\TravelAgency.Service.pdb
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\TravelAgency.DAL.pdb
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\TravelAgency.Interface.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency\bin\Debug\net5.0\FluentValidation.dll

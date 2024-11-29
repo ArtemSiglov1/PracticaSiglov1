@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TravelAgency.DAL;
+using TravelAgency.Domain.Enums;
 using TravelAgency.Domain.ViewModels;
 using TravelAgency.Interface;
 
@@ -36,19 +37,21 @@ namespace TravelAgency.Controllers
             {
                 try
                 {
-                    var response = await _account.Login(new Interface.Models.RegAndLog.LoginUser()
+                    if (model.Login != null)
                     {
-                        Email = model.Login.Email,
-                        Password = model.Login.Password
-                    });
-
+                        var response = await _account.Login(new Interface.Models.RegAndLog.LoginUser()
+                        {
+                            Email = model.Login.Email,
+                            Password = model.Login.Password
+                        });
+                   
                     if (response != null)
                     {
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                            new System.Security.Claims.ClaimsPrincipal(response));
-                        return Ok(model) /*Redirect("/Home/SiteInformation")*/;
+                            new System.Security.Claims.ClaimsPrincipal(response.Data));
+                        return /*Ok(model)*/ Redirect("/Home/SiteInformation");
                     }
-
+                    }
                     // Если response null, можно добавить ошибку
                     ModelState.AddModelError("", "Invalid login attempt.");
                 }
@@ -90,9 +93,12 @@ namespace TravelAgency.Controllers
                     });
 
                     // Если регистрация прошла успешно
-                    if (response != null)
+                    if (response.StatusCode == StatucCode.OK)
                     {
-                        return Ok(model)/*Redirect("/Home/SiteInformation")*/;  // Возвращаем успешный ответ
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                        new System.Security.Claims.ClaimsPrincipal(response.Data));
+
+                        return /*Ok(model)*/Redirect("/Home/SiteInformation");  // Возвращаем успешный ответ
                     }
 
                     // В случае ошибки (например, если ошибка в response)

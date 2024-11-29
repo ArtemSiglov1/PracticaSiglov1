@@ -10,3 +10,6 @@ D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\obj\Debug\
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\obj\Debug\net5.0\TravelAgency.Interface.dll
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\obj\Debug\net5.0\ref\TravelAgency.Interface.dll
 D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\obj\Debug\net5.0\TravelAgency.Interface.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\bin\Debug\net5.0\TravelAgency.Domain.dll
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\bin\Debug\net5.0\TravelAgency.Domain.pdb
+D:\313-315RN\work\PracticaSiglov1\TravelAgency\TravelAgency.Interface\obj\Debug\net5.0\TravelAgency.Interface.csproj.CopyComplete

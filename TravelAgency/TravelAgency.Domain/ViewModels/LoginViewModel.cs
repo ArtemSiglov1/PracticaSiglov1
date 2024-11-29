@@ -18,6 +18,5 @@ namespace TravelAgency.Domain.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
-        public LoginViewModel() { }
     }
 }

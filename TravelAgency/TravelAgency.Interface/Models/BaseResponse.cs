@@ -3,38 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelAgency.Domain.Enums;
 
 namespace TestUsers.Interface.Models
 {
     /// <summary>
     /// базовый ответ
     /// </summary>
-    public class BaseResponse
+    public class BaseResponse<T> : IBaseResponse<T>
     {
-        /// <summary>
-        /// успешно
-        /// </summary>
-       public bool IsSuccess { get; set; }
-  /// <summary>
-  /// соо об ошибке
-  /// </summary>
-        public string ErrorMessage { get; set; }
-        /// <summary>
-        /// конструктор по умолчанию
-        /// </summary>
-        public BaseResponse() { }
-        public BaseResponse(bool isSuccess)
-        {
-            IsSuccess = isSuccess;
-        }
-        /// <summary>
-        /// с параметрами
-        /// </summary>
-        /// <param name="isSuccess">успех</param>
-        /// <param name="errorMessage">соо об ошибке </param>
-        public BaseResponse(bool isSuccess, string errorMessage):this(isSuccess)
-        {
-            ErrorMessage = errorMessage;
-        }
+        public string Description { get; set; }
+        public StatucCode StatusCode { get; set; }
+        public T Data { get; set; }
+    }
+
+    public interface IBaseResponse<T>
+    {
+        T Data { get; set; }
     }
 }

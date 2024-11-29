@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gu9lHgDb9i+vrSjm8WMGu4PgNM+NLJUdsw4hbIqnn/P5ZLonkRQRX3Uko9XNCL/BB31dwrLJcW2fdgjoLWdgJQ==",
+  "dgSpecHash": "4wA2Xacz5KhbHeZPNWjqB14jnvWz7aYkPFuuNkLaFcF01Q2HuBlRz8FihdpINTr5P66GQNRDVPiJPP/czf8y3g==",
   "success": true,
   "projectFilePath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Service\\TravelAgency.Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kab-35-17\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.0\\microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.0\\microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",

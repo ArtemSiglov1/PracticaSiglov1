@@ -10,5 +10,11 @@ namespace TravelAgency.Domain.ViewModels
     {
         public LoginViewModel Login { get; set; }
         public RegisterViewModel Register { get; set; }
+        //public LoginRegistrView() { }
+        //public LoginRegistrView(LoginViewModel login,RegisterViewModel register)
+        //{
+        //    Login = login;
+        //    Register = register;
+        //}
     }
 }

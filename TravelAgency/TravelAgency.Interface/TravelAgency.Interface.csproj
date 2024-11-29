@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TravelAgency.Domain\TravelAgency.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

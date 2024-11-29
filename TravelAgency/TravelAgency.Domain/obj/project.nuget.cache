@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AELV1lwiKQQ/xvgXQ9QMjwPc8DXprUjoljIGKiNNYnSMKxeEFM+Yv4hToo50l9YHvjZKDCwQKBF3vs4j8My3SA==",
+  "dgSpecHash": "sIrP8F/pWSwNzKkRw0bG/EySqMLPQeL47c1xgJATVWUo9jAHpeg6Gz4/hgiwdT1f910LRLXF+85bD6ttJlgBFA==",
   "success": true,
   "projectFilePath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency.Domain\\TravelAgency.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kab-35-17\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512"
+  ],
   "logs": []
 }

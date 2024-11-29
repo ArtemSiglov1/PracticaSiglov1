@@ -332,6 +332,17 @@
           "TravelAgency.dll": {}
         }
       },
+      "FluentValidation/11.11.0": {
+        "runtime": {
+          "lib/net5.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.11.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/FluentValidation.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -516,6 +527,9 @@
         }
       },
       "TravelAgency.Domain/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.11.0"
+        },
         "runtime": {
           "TravelAgency.Domain.dll": {}
         },
@@ -524,6 +538,9 @@
         }
       },
       "TravelAgency.Interface/1.0.0": {
+        "dependencies": {
+          "TravelAgency.Domain": "1.0.0"
+        },
         "runtime": {
           "TravelAgency.Interface.dll": {}
         },
@@ -2249,6 +2266,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentValidation/11.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cyIVdQBwSipxWG8MA3Rqox7iNbUNUTK5bfJi9tIdm4CAfH71Oo5ABLP4/QyrUwuakqpUEPGtE43BDddvEehuYw==",
+      "path": "fluentvalidation/11.11.0",
+      "hashPath": "fluentvalidation.11.11.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
