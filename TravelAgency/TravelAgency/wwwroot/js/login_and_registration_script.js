@@ -93,8 +93,8 @@
                     cleaningAndClosingForm(form, errorContainer);
 
                     console.log('Успешный ответ:', data);
-
-                    location.reload()
+                    hiddenOpen_Closeclick(".confirm-email-container");
+                    confirmEmail(data);
                 })
                 .catch(err => {
                     //displayErrors(err, errorContainer);
@@ -144,7 +144,18 @@
             errorContainer.appendChild(errorMessage);
         });
     }
-
+    document.getElementById("click-to-hide").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
+    document.getElementById("side-menu-button-click-to-hide").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
+    document.getElementById(".overlay").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
+    document.getElementById(".button_confirm_close").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
     // Функция очистки и закрытия формы 
     function cleaningAndClosingForm(form, errorContainer) {
 
@@ -154,7 +165,22 @@
                 form[key].value = ''; // Сброс значений полей формы
             }
         }
-        hiddenOpen_Closeclick();
+        hiddenOpen_Closeclick(".container-login-registration");
     }
-
+    function confirmEmail(body) {
+        document.querySelector(".send_confirm").addEventListener('click', function () {
+            body.codeConfirm = document.getElementById('code_confirm').value;
+            const requestURL = '/Home/ConfirmEmail';
+            sendRequest('POST', requestURL, body)
+                .then(data => {
+                    console.log("Код подтверждения:", data);
+                    hiddenOpen_Closeclick(".confirm-email-container");
+                    location.reload();
+                })
+                .catch(err => {
+                    displayErrors(err, errorContainer);
+                    console.log(err);
+                })
+        });
+    }
 });

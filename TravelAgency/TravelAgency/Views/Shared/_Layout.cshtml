@@ -12,6 +12,8 @@
 </head>
 <body>
     @await Html.PartialAsync("_LoginRegistrationPartial")
+    @await Html.PartialAsync("_ConfirmEmailPartial")
+
     <div id="header-top">
         <div class="logo">Bookstore</div>
         <div class="button-header">
@@ -21,7 +23,7 @@
             }
             @if (!User.Identity.IsAuthenticated)
             {
-            <button class="button" id="click-to-hide">Войти</button>
+                <button class="button" id="click-to-hide">Войти</button>
             }
         </div>
         <div id="hamburger" class="icon">&#9776;</div>
@@ -52,7 +54,7 @@
         @if (!User.Identity.IsAuthenticated)
         {
 
-        <button class="button" id="side-menu-button-click-to-hide" type="button" name="button">Войти</button>
+            <button class="button" id="side-menu-button-click-to-hide" type="button" name="button">Войти</button>
         }
     </div>
 
@@ -65,7 +67,7 @@
             <div class="logo">Bookstore</div>
             <p>
             </p>
-            Мы — книжный магазин, где каждый найдет книгу по душе. 
+            Мы — книжный магазин, где каждый найдет книгу по душе.
             У нас представлены лучшие произведения для любителей литературы разных жанров — от классики до современных бестселлеров, от научной фантастики до вдохновляющих книг по саморазвитию.
             Мы тщательно отбираем каждое издание, чтобы предложить нашим читателям только качественные и увлекательные книги. Наши сотрудники всегда готовы помочь в выборе, чтобы ваше знакомство с книгой стало настоящим событием.
             Погружайтесь в мир книг с нами!

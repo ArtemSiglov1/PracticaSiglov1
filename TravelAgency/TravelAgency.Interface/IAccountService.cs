@@ -8,7 +8,8 @@ namespace TravelAgency.Interface
 {
     public interface IAccountService
     {
-       public Task<BaseResponse<ClaimsIdentity>> Register(RegistrationUser registration);
+       public Task<BaseResponse<string>> Register(RegistrationUser registration);
        public Task<BaseResponse<ClaimsIdentity>> Login(LoginUser login);
+        public Task<BaseResponse<ClaimsIdentity>> ConfirmEmail(RegistrationUser user, string code, string confirmcode);
     }
 }

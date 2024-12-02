@@ -50,7 +50,7 @@
                         <input asp-for="@Model.Register.PasswordConfirm" type="password" placeholder=" " id="signup_password" />
                         <span>Подтвердите пароль</span>
                     </label>
-                    <button class="form-btn form_btn_signup" type="submit">Зарегистрироваться</button>
+                    <button class="form-btn form_btn_signup" href="@Url.Action("ConfirmEmail","Home")" type="submit">Зарегистрироваться</button>
 
                     <div id="error_messages_singup"></div>
                 </form>

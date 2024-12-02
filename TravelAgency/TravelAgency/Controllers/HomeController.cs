@@ -10,8 +10,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using TravelAgency.DAL;
 using TravelAgency.Domain.Enums;
+using TravelAgency.Domain.Models;
 using TravelAgency.Domain.ViewModels;
 using TravelAgency.Interface;
+using TravelAgency.Interface.Models.RegAndLog;
 
 namespace TravelAgency.Controllers
 {
@@ -75,7 +77,7 @@ namespace TravelAgency.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("SiteInformation", "Home");
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> Register(LoginRegistrView model)
         {
@@ -83,26 +85,29 @@ namespace TravelAgency.Controllers
             {
                 try
                 {
+                    var confirm = new ConfirmEmailViewModel
+                    {
+                        Email = model.Register.Email,
+                        Login = model.Register.Login,
+                        Password = model.Register.Password,
+                        PasswordConfirm = model.Register.PasswordConfirm
+                    };
                     // Выполнение регистрации
-                    var response = await _account.Register(new Interface.Models.RegAndLog.RegistrationUser()
+                    var code = await _account.Register(new Interface.Models.RegAndLog.RegistrationUser()
                     {
                         Email = model.Register.Email,
                         Password = model.Register.Password,
                         PasswordConfirm = model.Register.PasswordConfirm,
                         Login = model.Register.Login
                     });
-
+                    confirm.GeneratedCode = code.Data;
                     // Если регистрация прошла успешно
-                    if (response.StatusCode == StatucCode.OK)
-                    {
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new System.Security.Claims.ClaimsPrincipal(response.Data));
 
-                        return /*Ok(model)*/Redirect("/Home/SiteInformation");  // Возвращаем успешный ответ
-                    }
+                    return Ok(confirm);  // Возвращаем успешный ответ
+
 
                     // В случае ошибки (например, если ошибка в response)
-                    ModelState.AddModelError("","Unknown registration error occurred.");
+                    //ModelState.AddModelError("","Unknown registration error occurred.");
                 }
                 catch (Exception ex)
                 {
@@ -110,7 +115,8 @@ namespace TravelAgency.Controllers
                     ModelState.AddModelError("", $"An error occurred: {ex.Message}");
                 }
             }
-
+          
+           
             // Собираем все ошибки из ModelState и возвращаем их
             var errors = ModelState.Values.SelectMany(v => v.Errors)
                                           .Select(e => e.ErrorMessage)
@@ -119,7 +125,29 @@ namespace TravelAgency.Controllers
             return BadRequest(new { errors });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> ConfirmEmail([FromBody] ConfirmEmailViewModel confirmEmailViewModel)
+        {
+            var user = new RegistrationUser
+            {
+                Email = confirmEmailViewModel.Email,
+                Login = confirmEmailViewModel.Login,
+                Password = confirmEmailViewModel.Password,
 
+            };
+            var response = await _account.ConfirmEmail(user, confirmEmailViewModel.GeneratedCode, confirmEmailViewModel.CodeConfirm);
+            if (response.StatusCode == StatucCode.OK)
+            {
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                    new System.Security.Claims.ClaimsPrincipal(response.Data));
+                return Ok(confirmEmailViewModel);
+            }
+            ModelState.AddModelError("", response.Description);
+            var errors = ModelState.Values.SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage)
+                .ToList();
+            return BadRequest(errors);
+        }
         public IActionResult Index()
         {
             return View();
