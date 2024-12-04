@@ -1,6 +1,7 @@
 ﻿<link rel="stylesheet" href="~/css/login_and_registration.css" />
  
 @model TravelAgency.Domain.ViewModels.LoginRegistrView
+
 <div class="container-login-registration">
     <div class="block-container">
 
@@ -15,45 +16,47 @@
             </section>
         </div>
         <div class="form-box">
-            <form asp-action="Login" asp-controller="Home" class="form form_signip">
+            @*asp-action="Login" asp-controller="Home"*@
+            <form class="form form_signin">
 
-               
-                    <h3 class="form_title">Вход</h3>
-                    <label>
-                        <input asp-for="@Model.Login.Email" type="email" placeholder=" " id="signin_email" />
-                        <span>Почта</span>
-                    </label>
-                    <label>
-                        <input asp-for="@Model.Login.Password" type="password" placeholder=" " id="signin_password" />
-                        <span>Пароль</span>
-                    </label>
-                    <button class="form-btn form_btn_signin" type="submit">Войти</button>
 
-                    <div id="error-messages-signin"></div>
-                
-                </form>
-                <form asp-action="Register" asp-controller="Home" class="form form_signup">
-                    <h3 class="form_title">Регистрация</h3>
-                    <label>
-                        <input asp-for="@Model.Register.Login" type="text" placeholder=" " id="signup_login" />
-                        <span>Логин</span>
-                    </label>
-                    <label>
-                        <input asp-for="@Model.Register.Email" type="email" placeholder=" " id="signup_email" />
-                        <span>Почта</span>
-                    </label>
-                    <label>
-                        <input asp-for="@Model.Register.Password" type="password" placeholder=" " id="signup_password" />
-                        <span>Пароль</span>
-                    </label>
-                    <label>
-                        <input asp-for="@Model.Register.PasswordConfirm" type="password" placeholder=" " id="signup_password" />
-                        <span>Подтвердите пароль</span>
-                    </label>
-                    <button class="form-btn form_btn_signup" href="@Url.Action("ConfirmEmail","Home")" type="submit">Зарегистрироваться</button>
+                <h3 class="form_title">Вход</h3>
+                <label  >
+                    <input @*asp-for="@Model.Login.Email"*@ id="signin_email" type="email" placeholder=" " />
+                    <span>Почта</span>
+                </label>
+                <label >
+                    <input @*asp-for="@Model.Login.Password"*@ id="signin_password" type="password" placeholder=" "  />
+                    <span>Пароль</span>
+                </label>
+                <div class="form-btn form_btn_signin" @*type="submit"*@>Войти</div>
 
-                    <div id="error_messages_singup"></div>
-                </form>
+                <div id="error-messages-signin"></div>
+
+            </form>
+            @*asp-action="Register" asp-controller="Home"*@
+            <form class="form form_signup">
+                <h3 class="form_title">Регистрация</h3>
+                <label>
+                    <input @*asp-for="@Model.Register.Login"*@ type="text" placeholder=" " id="signup_login" />
+                    <span>Логин</span>
+                </label>
+                <label>
+                    <input @*asp-for="@Model.Register.Email"*@ type="email" placeholder=" " id="signup_email" />
+                    <span>Почта</span>
+                </label>
+                <label>
+                    <input @*asp-for="@Model.Register.Password"*@ type="password" placeholder=" " id="signup_password" />
+                    <span>Пароль</span>
+                </label>
+                <label>
+                    <input @*asp-for="@Model.Register.PasswordConfirm"*@ type="password" placeholder=" " id="signup_confirm_password" />
+                    <span>Подтвердите пароль</span>
+                </label>
+                <div class="form-btn form_btn_signup" @*type="submit"*@>Зарегистрироваться</div>
+
+                <div id="error-messages-signup"></div>
+            </form>
         </div>
     </div>
     <div class="overlay"></div>

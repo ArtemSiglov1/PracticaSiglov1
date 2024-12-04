@@ -11,8 +11,8 @@ namespace TravelAgency.Domain.ViewModels
     {
         [Required(ErrorMessage = "Введите почту")]
         [EmailAddress(ErrorMessage = "Некорректный адрес эдектронной почты")]
-
         public string Email { get; set; }
+
 
         [Required(ErrorMessage = "Введите пароль")]
         [DataType(DataType.Password)]

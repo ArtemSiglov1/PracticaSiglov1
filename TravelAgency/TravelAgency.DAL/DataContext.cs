@@ -33,7 +33,7 @@ namespace TravelAgency.DAL
         {
             optionsBuilder.UseLoggerFactory(MyLoggerFactory)
                 .EnableSensitiveDataLogging()
-               .UseNpgsql("Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=111111");
+               .UseNpgsql("Host=localhost;Port=5432;Database=BookStore;Username=postgres;Password=123456789");
         }
     }
 }

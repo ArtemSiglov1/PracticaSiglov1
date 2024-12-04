@@ -78,7 +78,7 @@ namespace TravelAgency.Service
         }
         public async Task SendEmail(string email, string confirmpas)
         {
-            string path = @"D:\313-315RN\work\PracticaSiglov1\TravelAgency\password";
+            string path = @"D:\313-315RN\work\PracticaSiglov1\TravelAgency\password.txt";
             var emailMessage = new MimeMessage();
 
             emailMessage.From.Add(new MailboxAddress("Admin", "artemsiglov@gmail.com"));
@@ -103,15 +103,25 @@ namespace TravelAgency.Service
                 "<div class='container-code'><p class='code'>" + confirmpas + "</p></div>" +
                 "</div>" + "</div>" + "</body>" + "</html>"
             };
-            using var reader = new StreamReader(path);
+            using var reader = new StreamReader(path, Encoding.UTF8);
             string password = await reader.ReadToEndAsync();
             using var client = new SmtpClient();
-            await client.ConnectAsync("smtp.gmail.com", 465, true);
-            await client.AuthenticateAsync("artemsiglov@gmail.com", password);
-            await client.SendAsync(emailMessage);
+            try
+            {
+                await client.ConnectAsync("smtp.gmail.com", 465, true);
 
-            await client.DisconnectAsync(true);
-                }
+                await client.AuthenticateAsync("artemsiglov@gmail.com", password);
+                await client.SendAsync(emailMessage);
+
+                await client.DisconnectAsync(true);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public async Task<BaseResponse<ClaimsIdentity>> ConfirmEmail(RegistrationUser model,string code,string confirmCode)
         {
             try
@@ -155,8 +165,8 @@ namespace TravelAgency.Service
             {
                 try
                 {
-                Random random = new Random();
-                string confCode = $"{random.Next(10)}{random.Next(10)}{random.Next(10)}{random.Next(10)}";
+                    Random random = new Random();
+                    string confCode = $"{random.Next(10)}{random.Next(10)}{random.Next(10)}{random.Next(10)}";
                     var valid = new RegAndLogModel { LoginUser = null, RegistrationUser = registration };
                     validationRules = new UserValidator(valid);
                     await validationRules.ValidateAndThrowAsync(valid);
@@ -180,10 +190,10 @@ namespace TravelAgency.Service
                     registration.Password = HashPasswordHelper.HashPassword(registration.Password);
 
                     var user = new User { Role = 0, CreatedAt = registration.CreatedAt, Email = registration.Email, Login = registration.Login, Password = registration.Password, PathImg = registration.PathImage };
-                    await db.Buyers.AddAsync(user);
-                    await db.SaveChangesAsync();
-                    var res = AuthenticateUserHelper.Authentificate(user);
-
+                    //await db.Buyers.AddAsync(user);
+                    //await db.SaveChangesAsync();
+                    //var res = AuthenticateUserHelper.Authentificate(user);
+                    await SendEmail(user.Email, confCode);
                     return new BaseResponse<string>()
                     {
                         Data = confCode,

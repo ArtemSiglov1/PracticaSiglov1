@@ -110,14 +110,21 @@ span {
     transition: all 0.3s ease-in-out;
     padding: 0 4px;
 }
+
 .form-box input:focus + span,
-.form-box input:not(placeholder-shown) span {
+.form-box input:not(:placeholder-shown)~span {
     top: -18px;
     left: 8px;
     font-size: 12px;
     color: rgb(255, 165, 0);
     background-color: #fff;
+    position: absolute; /* или relative в родительском элементе */
 }
+
+.form-box span {
+    width: 200px;
+}
+
 .form-btn {
     border: none;
     cursor: pointer;

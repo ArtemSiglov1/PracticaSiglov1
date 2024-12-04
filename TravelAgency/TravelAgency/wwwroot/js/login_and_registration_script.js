@@ -1,17 +1,30 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
-    function hiddenOpen_Closeclick() {
-        let x = document.querySelector(".container-login-registration");
-        if (x.style.display == "none") {
-            x.style.display = "grid";
-        } else {
-            x.style.display = "none";
+
+    function hiddenOpen_Closeclick(container) {
+    let x = document.querySelector(container);
+    if (x.style.display == "none") {
+        x.style.display = "grid";
+    } else {
+        x.style.display = "none";
         }
     }
 
-    document.getElementById("click-to-hide").addEventListener('click', hiddenOpen_Closeclick);
-    document.getElementById("side-menu-button-click-to-hide").addEventListener("click", hiddenOpen_Closeclick);
-    document.querySelector(".overlay").addEventListener("click", hiddenOpen_Closeclick);
 
+    document.getElementById("click-to-hide").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
+
+    document.getElementById("side-menu-button-click-to-hide").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
+
+    document.querySelector(".overlay").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".container-login-registration");
+    });
+
+    document.querySelector(".button_confirm_close").addEventListener("click", function () {
+        hiddenOpen_Closeclick(".confirm-email-container");
+    });
 
     const signInBtn = document.querySelector('.signin-btn');
     const signUpBtn = document.querySelector('.signup-btn');
@@ -30,8 +43,6 @@
         });
     }
 
-
-
     const form_btn_signin = document.querySelector('.form_btn_signin');
     const form_btn_signup = document.querySelector('.form_btn_signup');
 
@@ -39,7 +50,7 @@
         form_btn_signin.addEventListener('click', function () {
             const requestURL = '/Home/Login';
 
-            const errorContainer = document.getElementById('error-messages-singin');
+            const errorContainer = document.getElementById("error-messages-signin");
 
             const form = {
                 email: document.getElementById('signin_email'),
@@ -72,13 +83,13 @@
         form_btn_signup.addEventListener('click', function () {
             const requestURL = '/Home/Register';
 
-            const errorContainer = document.getElementById("error_messages_singup");
+            const errorContainer = document.getElementById('error-messages-signup');
 
             const form = {
-                login: document.getElementById('signup_login'),
-                email: document.getElementById('signup_email'),
-                password: document.getElementById('signup_password'),
-                passwordConfirm: document.getElementById('signup_confirm_password')
+                login: document.getElementById("signup_login"),
+                email: document.getElementById("signup_email"),
+                password: document.getElementById("signup_password"),
+                passwordConfirm: document.getElementById("signup_confirm_password"),
             }
 
             const body = {
@@ -91,45 +102,35 @@
             sendRequest('POST', requestURL, body)
                 .then(data => {
                     cleaningAndClosingForm(form, errorContainer);
-
                     console.log('Успешный ответ:', data);
                     hiddenOpen_Closeclick(".confirm-email-container");
                     confirmEmail(data);
                 })
                 .catch(err => {
-                    //displayErrors(err, errorContainer);
-
-                    console.log(err);
+                    displayErrors(err, errorContainer)
+                    console.log(err)
                 });
         });
     }
 
+
     function sendRequest(method, url, body = null) {
         const headers = {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         };
 
         return fetch(url, {
             method: method,
-            body: JSON.stringify(body),
-            headers: headers
-        })
-            .then(response => {
-                if (!response.ok) {
-                    // Попробуем сначала получить текстовый ответ, если не удалось распарсить JSON
-                    return response.text().then(text => {
-                        try {
-                            const errorData = JSON.parse(text); // Попытка распарсить текст как JSON
-                            throw errorData; // Бросаем ошибки для обработки в .catch()
-                        } catch (error) {
-                            // Если ошибка при парсинге JSON, выбрасываем текст как ошибку
-                            throw { message: 'Ответ сервера не является валидным JSON', details: text };
-                        }
-                    });
-                }
-                // Если ответ успешен, возвращаем распарсенный JSON
-                return response.json();
-            });
+            headers: headers,
+            body: JSON.stringify(body)
+        }).then(response => {
+            if (!response.ok) {
+                return response.json().then(errorData => {
+                    throw errorData;
+                });
+            }
+            return response.json();
+        });
     }
 
 
@@ -144,18 +145,8 @@
             errorContainer.appendChild(errorMessage);
         });
     }
-    document.getElementById("click-to-hide").addEventListener("click", function () {
-        hiddenOpen_Closeclick(".container-login-registration");
-    });
-    document.getElementById("side-menu-button-click-to-hide").addEventListener("click", function () {
-        hiddenOpen_Closeclick(".container-login-registration");
-    });
-    document.getElementById(".overlay").addEventListener("click", function () {
-        hiddenOpen_Closeclick(".container-login-registration");
-    });
-    document.getElementById(".button_confirm_close").addEventListener("click", function () {
-        hiddenOpen_Closeclick(".container-login-registration");
-    });
+
+
     // Функция очистки и закрытия формы 
     function cleaningAndClosingForm(form, errorContainer) {
 
@@ -167,6 +158,8 @@
         }
         hiddenOpen_Closeclick(".container-login-registration");
     }
+
+
     function confirmEmail(body) {
         document.querySelector(".send_confirm").addEventListener('click', function () {
             body.codeConfirm = document.getElementById('code_confirm').value;
@@ -184,3 +177,5 @@
         });
     }
 });
+
+

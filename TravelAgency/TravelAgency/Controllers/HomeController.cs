@@ -33,26 +33,26 @@ namespace TravelAgency.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginRegistrView model)
+        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    if (model.Login != null)
+                    if (model != null)
                     {
                         var response = await _account.Login(new Interface.Models.RegAndLog.LoginUser()
                         {
-                            Email = model.Login.Email,
-                            Password = model.Login.Password
+                            Email = model.Email,
+                            Password = model.Password
                         });
                    
-                    if (response != null)
-                    {
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                            new System.Security.Claims.ClaimsPrincipal(response.Data));
-                        return /*Ok(model)*/ Redirect("/Home/SiteInformation");
-                    }
+                        if (response != null)
+                        {
+                            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                                new System.Security.Claims.ClaimsPrincipal(response.Data));
+                            return Ok(model)/* Redirect("/Home/SiteInformation")*/;
+                        }
                     }
                     // Если response null, можно добавить ошибку
                     ModelState.AddModelError("", "Invalid login attempt.");
@@ -71,6 +71,7 @@ namespace TravelAgency.Controllers
 
             return BadRequest(errors);
         }
+
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Logout()
         {
@@ -79,7 +80,7 @@ namespace TravelAgency.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> Register(LoginRegistrView model)
+        public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -87,18 +88,18 @@ namespace TravelAgency.Controllers
                 {
                     var confirm = new ConfirmEmailViewModel
                     {
-                        Email = model.Register.Email,
-                        Login = model.Register.Login,
-                        Password = model.Register.Password,
-                        PasswordConfirm = model.Register.PasswordConfirm
+                        Email = model.Email,
+                        Login = model.Login,
+                        Password = model.Password,
+                        PasswordConfirm = model.PasswordConfirm
                     };
                     // Выполнение регистрации
                     var code = await _account.Register(new Interface.Models.RegAndLog.RegistrationUser()
                     {
-                        Email = model.Register.Email,
-                        Password = model.Register.Password,
-                        PasswordConfirm = model.Register.PasswordConfirm,
-                        Login = model.Register.Login
+                        Email = model.Email,
+                        Password = model.Password,
+                        PasswordConfirm = model.PasswordConfirm,
+                        Login = model.Login
                     });
                     confirm.GeneratedCode = code.Data;
                     // Если регистрация прошла успешно
@@ -107,7 +108,7 @@ namespace TravelAgency.Controllers
 
 
                     // В случае ошибки (например, если ошибка в response)
-                    //ModelState.AddModelError("","Unknown registration error occurred.");
+                   //ModelState.AddModelError("","Unknown registration error occurred.");
                 }
                 catch (Exception ex)
                 {
@@ -122,7 +123,7 @@ namespace TravelAgency.Controllers
                                           .Select(e => e.ErrorMessage)
                                           .ToList();
 
-            return BadRequest(new { errors });
+            return BadRequest(errors);
         }
 
         [HttpPost]

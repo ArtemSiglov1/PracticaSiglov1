@@ -9,13 +9,13 @@ namespace TravelAgency.Domain.ViewModels
 {
    public class RegisterViewModel
     {
-        public RegisterViewModel(string login, string email, string password, string confirmPassword)
-        {
-            Login = login;
-            Email = email;
-            Password = password;
-            PasswordConfirm = confirmPassword;
-        }
+        //public RegisterViewModel(string login, string email, string password, string confirmPassword)
+        //{
+        //    Login = login;
+        //    Email = email;
+        //    Password = password;
+        //    PasswordConfirm = confirmPassword;
+        //}
 
 
         [Required(ErrorMessage = "Укажите имя 3-20 символов")]
