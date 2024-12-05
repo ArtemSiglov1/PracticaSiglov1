@@ -220,6 +220,52 @@ namespace TravelAgency.Service
                     };
                 }
             }
+
+        public async Task<BaseResponse<ClaimsIdentity>> IsCreatedAccount(RegistrationUser user)
+        {
+            try
+            {
+                await using var db = new DataContext(dbcontextOptions);
+                var user1 =await db.Buyers.FirstOrDefaultAsync(x => x.Email == user.Email);
+                if (user1 == null)
+                {
+                    user.CreatedAt = DateTime.UtcNow;
+                    user.Password = HashPasswordHelper.HashPassword("Google");
+                    user.PathImage = "/images/user.png";
+                    var dbUser = new User
+                    {
+                        CreatedAt = user.CreatedAt,
+                        Email = user.Email,
+                        Login = user.Login,
+                        PathImg = user.PathImage,
+                        Password = user.Password,
+                        Role = 0
+                    };
+                    await db.Buyers.AddAsync(dbUser);
+                    await db.SaveChangesAsync();
+                    var res = AuthenticateUserHelper.Authentificate(dbUser);
+                    return new BaseResponse<ClaimsIdentity>()
+                    {
+                        Data = res,
+                        StatusCode = StatucCode.OK
+                    };
+                }
+                var result = AuthenticateUserHelper.Authentificate(user1);
+                return new BaseResponse<ClaimsIdentity>()
+                {
+                    Data = result,
+                    StatusCode = StatucCode.OK
+                };
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse<ClaimsIdentity>()
+                {
+                    Description=ex.Message,
+                    StatusCode=StatucCode.InternalServerError
+                };
+            }
         }
+    }
     }
 

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>0b7aa190-018e-4cbc-8608-fc0fa18d145b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>

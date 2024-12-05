@@ -11,5 +11,6 @@ namespace TravelAgency.Interface
        public Task<BaseResponse<string>> Register(RegistrationUser registration);
        public Task<BaseResponse<ClaimsIdentity>> Login(LoginUser login);
         public Task<BaseResponse<ClaimsIdentity>> ConfirmEmail(RegistrationUser user, string code, string confirmcode);
+        public Task<BaseResponse<ClaimsIdentity>> IsCreatedAccount(RegistrationUser user);
     }
 }

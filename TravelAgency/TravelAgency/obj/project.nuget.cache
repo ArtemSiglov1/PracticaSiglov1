@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iR/iY030V1yJ5QUrcWkkj4t4JjkuaWFTAITo7+95myNdzShZQL44gFtZlrILAt+bIvKQuI790UzzLc+ok+KAQQ==",
+  "dgSpecHash": "8u3F9wV5z1QXjEhCvCtuR1A1lnETBQ6og4Mu9WQeKZCYW+3V5Hdz38+9SbyJpg37ZySSnXipJTksmQa5yN1H4Q==",
   "success": true,
   "projectFilePath": "D:\\313-315RN\\work\\PracticaSiglov1\\TravelAgency\\TravelAgency\\TravelAgency.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\kab-35-17\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\mailkit\\4.8.0\\mailkit.4.8.0.nupkg.sha512",
+    "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.0\\microsoft.aspnetcore.authentication.google.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\kab-35-17\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.0\\microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
